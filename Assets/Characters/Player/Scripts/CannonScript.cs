@@ -63,6 +63,9 @@ public class CannonScript : MonoBehaviour
                GameObject newProjectile = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
                newProjectile.transform.LookAt(Hit.point);
                newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 1000);
+               float lifetime = 2.0f;
+               Destroy(newProjectile, lifetime);
+     
                 
             }
 

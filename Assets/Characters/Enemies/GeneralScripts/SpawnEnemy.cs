@@ -11,6 +11,8 @@ public class SpawnEnemy : MonoBehaviour {
 	{
 		InvokeRepeating("SpawnRandomEnemy", 2, 2.0f);//A partir del segundo 2, cada 2 segundos
 	}
+
+	
 	
 	// Update is called once per frame
 	void Update () {
