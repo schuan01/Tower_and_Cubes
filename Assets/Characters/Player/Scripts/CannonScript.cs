@@ -58,15 +58,19 @@ public class CannonScript : MonoBehaviour
             RaycastHit Hit;
             if (Physics.Raycast(ray, out Hit, 1000))
             {
+
                 
-               Debug.DrawRay(transform.position, myTransform, Color.red);
-               GameObject newProjectile = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
-               newProjectile.transform.LookAt(Hit.point);
-               newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 1000);
-               float lifetime = 2.0f;
-               Destroy(newProjectile, lifetime);
-     
-                
+                GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
+                newProjectile.transform.LookAt(Hit.point);
+                newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
+                float lifetime = 2.0f;
+                Destroy(newProjectile, lifetime);
+
+                //Quaternion rot = Quaternion.LookRotation(Hit.point,Vector3.up);
+                //transform.rotation = rot;
+                transform.LookAt(Hit.point,Vector3.down);
+
+
             }
 
 
@@ -102,4 +106,6 @@ public class CannonScript : MonoBehaviour
 
 
     }
+
+    
 }
