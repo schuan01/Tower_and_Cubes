@@ -17,10 +17,11 @@ public class BulletScript : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
     {
         
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag.Contains("enemy"))//Mientras sea un enemigo
         {
-            Destroy(collision.gameObject);
-			Destroy(gameObject);
+			collision.gameObject.GetComponent<EnemyBase>().DecreseLife();
+           
+			Destroy(gameObject);//Destruid bala
         }
 
 

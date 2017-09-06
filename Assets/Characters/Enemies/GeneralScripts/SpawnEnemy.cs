@@ -4,12 +4,14 @@
 public class SpawnEnemy : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject respawnPrefab;
+	public GameObject[] respawnPrefab;
     public GameObject[] respawns;
+
+	public float timeBetweenSpawns = 2.0f;
 
 	void Start () 
 	{
-		InvokeRepeating("SpawnRandomEnemy", 2, 2.0f);//A partir del segundo 2, cada 2 segundos
+		InvokeRepeating("SpawnRandomEnemy", 2, timeBetweenSpawns);//A partir del segundo 2, cada 2 segundos
 	}
 
 	
@@ -26,9 +28,10 @@ public class SpawnEnemy : MonoBehaviour {
 
 		if(respawns.Length > 0)
 		{
-			int randomIndex = Random.Range(0,respawns.Length);
-			Vector3 ground = new Vector3(respawns[randomIndex].transform.position.x,0.45f,respawns[randomIndex].transform.position.z);	
-    		Instantiate(respawnPrefab,ground, respawns[randomIndex].transform.rotation);
+			int randomIndexLocations = Random.Range(0,respawns.Length);
+			int randomIndexPrefab = Random.Range(0,respawnPrefab.Length);
+			Vector3 ground = new Vector3(respawns[randomIndexLocations].transform.position.x,0.45f,respawns[randomIndexLocations].transform.position.z);	
+    		Instantiate(respawnPrefab[randomIndexPrefab],ground, respawns[randomIndexLocations].transform.rotation);
 		}
 	}
 }

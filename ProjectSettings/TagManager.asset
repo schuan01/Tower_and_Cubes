@@ -6,7 +6,9 @@ TagManager:
   tags:
   - randomPoint
   - terrainQuad
-  - enemy
+  - Undefined
+  - enemy_normal
+  - enemy_giant
   layers:
   - Default
   - TransparentFX
