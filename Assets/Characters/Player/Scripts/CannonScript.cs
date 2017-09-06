@@ -26,7 +26,7 @@ public class CannonScript : MonoBehaviour
         timePassed = 1.0f;//Para que pueda arrancar disparando
     }
 
-    float distance = 10.0f;
+    //float distance = 10.0f;
     public GameObject prefab;
     // Update is called once per frame
     void Update()
