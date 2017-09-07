@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MyTools
 {
-    private static List<GameObject> listOfTiles = new List<GameObject>();
+    private static GameObject[,] listOfTiles = new GameObject[11, 11];
     private static int numberOfTiles = 11;//Como son de tamaño 2
 
     private static GameObject pisoPrefab;
@@ -17,8 +17,10 @@ public class MyTools
     {
         if (EditorUtility.IsPersistent(Selection.activeObject))
         {
-			GameObject parent = MonoBehaviour.Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
-			parent.name = "TerrainAll";
+            GameObject parent = MonoBehaviour.Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
+            parent.name = "TerrainAll";
+            parent.AddComponent(typeof(TerrainBase));
+
             pisoPrefab = Selection.activeObject as GameObject;
             for (float x = -10.04f; x < numberOfTiles; x = x + 2)
             {
@@ -29,16 +31,22 @@ public class MyTools
                     indexJ++;
                     pisoCreado = MonoBehaviour.Instantiate(pisoPrefab, new Vector3(x, 0, z), Quaternion.identity);
                     pisoCreado.name = "TerrainQuad_" + indexI + "_" + indexJ;
-					pisoCreado.transform.parent = parent.transform;
-					listOfTiles.Add(pisoCreado);
+                    pisoCreado.transform.parent = parent.transform;
+                    listOfTiles[indexI, indexJ] = pisoCreado;
+                    if (indexJ == 0 || indexJ == 10)
+                    {
+                        pisoCreado.tag = "terrainQuad_Border";
+                    }
+
+                    if (indexI == 0 || indexI == 10)
+                    {
+                        pisoCreado.tag = "terrainQuad_Border";
+                    }
 
                 }
             }
+
+
         }
     }
-
-	public static List<GameObject> getTerrainList()
-	{
-		return listOfTiles;
-	}
 }

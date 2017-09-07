@@ -24,7 +24,7 @@ public class SpawnEnemy : MonoBehaviour {
 	void SpawnRandomEnemy()
 	{
 		
-        respawns = GameObject.FindGameObjectsWithTag("randomPoint");//Obtiene todos los puntos
+        respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border");//Obtiene todos los puntos,bordes
 
 		if(respawns.Length > 0)
 		{

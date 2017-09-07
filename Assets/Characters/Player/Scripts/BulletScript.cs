@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using UnityEditor;
 public class BulletScript : MonoBehaviour {
 
 	// Use this for initialization
@@ -23,6 +21,8 @@ public class BulletScript : MonoBehaviour {
            
 			Destroy(gameObject);//Destruid bala
         }
+
+		
 
 
 
