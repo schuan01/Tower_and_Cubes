@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class TerrainBase : MonoBehaviour
 {
 
@@ -10,12 +10,23 @@ public class TerrainBase : MonoBehaviour
     void Start()
     {
         SetTiles();
+        /*for (int i = 0; i < listOfTiles.GetLength(0); i++)
+        {
+            for (int j = 0; j < listOfTiles.GetLength(1); j++)
+            {
+                GameObject tile = listOfTiles[i, j];
+                tile.AddComponent<NavMeshSurface>();
+                tile.GetComponent<NavMeshSurface>().BuildNavMesh();
+
+
+            }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(listOfTiles.Length);
+
     }
 
     public void SetTiles()
@@ -35,6 +46,21 @@ public class TerrainBase : MonoBehaviour
         }
     }
 
+    private void RebuildNavMesh()
+    {
+        int contar = 0;
+        GameObject[] respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border");//Obtiene todos los puntos,bordes
+        foreach (GameObject g in respawns)
+        {
+            contar++;
+            if (contar == 1)
+            {
+                g.AddComponent<NavMeshSurface>();
+                g.GetComponent<NavMeshSurface>().BuildNavMesh();
+            }
+        }
+    }
+
     public GameObject[,] GetArrayTerrain()
     {
         return listOfTiles;
@@ -42,6 +68,11 @@ public class TerrainBase : MonoBehaviour
 
     public void DestroyTile(GameObject tile)
     {
+        GameObject g = Instantiate(new GameObject(),tile.transform.position,Quaternion.identity);
+        g.AddComponent<NavMeshObstacle>();
+        g.GetComponent<NavMeshObstacle>().carving = true;
+        g.GetComponent<NavMeshObstacle>().carvingTimeToStationary = 0;
+
         int[] pos = GetTileIndexByName(tile);
         listOfTiles[pos[0], pos[1]] = null;//Eliminamos del array
         Destroy(tile);//Eliminamos de la escena
@@ -63,6 +94,7 @@ public class TerrainBase : MonoBehaviour
     public void CheckBorders(GameObject sourceTile)
     {
         int[] positions = GetTileIndexByName(sourceTile);
+        DestroyTile(sourceTile);
         int posI = positions[0];
         int posJ = positions[1];
         int largoI;
@@ -83,10 +115,14 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-                Material[] mats = val.GetComponent<Renderer>().materials;
+                /*Material[] mats = val.GetComponent<Renderer>().materials;
                 mats[0] = matBorder;
-                val.GetComponent<Renderer>().materials = mats;
-				val.tag = "terrainQuad_Border";
+                val.GetComponent<Renderer>().materials = mats;*/
+                val.tag = "terrainQuad_Border";
+
+                
+
+
             }
 
         }
@@ -100,10 +136,12 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-                Material[] mats = val.GetComponent<Renderer>().materials;
+                /*Material[] mats = val.GetComponent<Renderer>().materials;
                 mats[0] = matBorder;
-                val.GetComponent<Renderer>().materials = mats;
-				val.tag = "terrainQuad_Border";
+                val.GetComponent<Renderer>().materials = mats;*/
+                val.tag = "terrainQuad_Border";
+
+                
             }
 
         }
@@ -117,10 +155,12 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-                Material[] mats = val.GetComponent<Renderer>().materials;
+                /*Material[] mats = val.GetComponent<Renderer>().materials;
                 mats[0] = matBorder;
-                val.GetComponent<Renderer>().materials = mats;
-				val.tag = "terrainQuad_Border";
+                val.GetComponent<Renderer>().materials = mats;*/
+                val.tag = "terrainQuad_Border";
+
+                
             }
 
         }
@@ -134,10 +174,12 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-                Material[] mats = val.GetComponent<Renderer>().materials;
+                /*Material[] mats = val.GetComponent<Renderer>().materials;
                 mats[0] = matBorder;
-                val.GetComponent<Renderer>().materials = mats;
-				val.tag = "terrainQuad_Border";
+                val.GetComponent<Renderer>().materials = mats;*/
+                val.tag = "terrainQuad_Border";
+
+                
             }
 
         }

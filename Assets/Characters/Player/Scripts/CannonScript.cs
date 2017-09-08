@@ -72,12 +72,12 @@ public class CannonScript : MonoBehaviour
                     GameObject piso = Hit.transform.gameObject;
                     if (piso != null && piso.tag.Contains("terrainQuad"))
                     {
-                        piso.transform.parent.gameObject.GetComponent<TerrainBase>().CheckBorders(piso);
-                        piso.transform.parent.gameObject.GetComponent<TerrainBase>().DestroyTile(piso);
+                        //piso.transform.parent.gameObject.GetComponent<TerrainBase>().CheckBorders(piso);
+                        //piso.transform.parent.gameObject.GetComponent<TerrainBase>().DestroyTile(piso);
                         //GameObject[,] terrainAll = piso.transform.parent.gameObject.GetComponent<TerrainBase>().GetArrayTerrain();
                         //Destroy(piso);
                     }
-                    /*GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
+                    GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
                     newProjectile.transform.LookAt(Hit.point);
                     newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
 
@@ -85,7 +85,7 @@ public class CannonScript : MonoBehaviour
 
                     //Quaternion rot = Quaternion.LookRotation(Hit.point,Vector3.up);
                     //transform.rotation = rot;
-                    transform.LookAt(Hit.point, Vector3.down);*/
+                    transform.LookAt(Hit.point, Vector3.down);
 
 
                 }
