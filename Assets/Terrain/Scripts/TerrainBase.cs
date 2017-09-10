@@ -10,17 +10,7 @@ public class TerrainBase : MonoBehaviour
     void Start()
     {
         SetTiles();
-        /*for (int i = 0; i < listOfTiles.GetLength(0); i++)
-        {
-            for (int j = 0; j < listOfTiles.GetLength(1); j++)
-            {
-                GameObject tile = listOfTiles[i, j];
-                tile.AddComponent<NavMeshSurface>();
-                tile.GetComponent<NavMeshSurface>().BuildNavMesh();
-
-
-            }
-        }*/
+       
     }
 
     // Update is called once per frame
@@ -46,20 +36,7 @@ public class TerrainBase : MonoBehaviour
         }
     }
 
-    private void RebuildNavMesh()
-    {
-        int contar = 0;
-        GameObject[] respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border");//Obtiene todos los puntos,bordes
-        foreach (GameObject g in respawns)
-        {
-            contar++;
-            if (contar == 1)
-            {
-                g.AddComponent<NavMeshSurface>();
-                g.GetComponent<NavMeshSurface>().BuildNavMesh();
-            }
-        }
-    }
+   
 
     public GameObject[,] GetArrayTerrain()
     {

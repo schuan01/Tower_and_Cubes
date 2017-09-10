@@ -36,7 +36,7 @@ public class EnemyBase : MonoBehaviour
 			if(timeBeforeExplode <= 0 && isExploding == false)
 			{
 				isExploding = true;
-				DestroyEnemy();
+				DestroyEnemyWithTile();
 				
 			}
 		}
@@ -54,6 +54,15 @@ public class EnemyBase : MonoBehaviour
     }
 
     void DestroyEnemy()
+    {
+		
+        StartCoroutine(SplitMesh(true));
+        //Destroy(gameObject); 
+
+
+    }
+
+    void DestroyEnemyWithTile()
     {
 		if(gameObject.tag == "enemy_explosive" && isExploding == true)
 		{

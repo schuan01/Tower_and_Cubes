@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
+#if UNITY_EDITOR 
 using UnityEditor;
+#endif
 public class BulletScript : MonoBehaviour {
 
 	// Use this for initialization

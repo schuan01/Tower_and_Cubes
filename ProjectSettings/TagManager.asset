@@ -10,6 +10,7 @@ TagManager:
   - enemy_giant
   - terrainQuad_Border
   - terrainAll
+  - enemy_explosive
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Particle
   - 
   - 
   - 

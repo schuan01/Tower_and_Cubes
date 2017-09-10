@@ -26,8 +26,8 @@ GameObject:
   - component: {fileID: 195591206369818892}
   - component: {fileID: 114660559168428358}
   m_Layer: 0
-  m_Name: Giant_Enemy
-  m_TagString: enemy_giant
+  m_Name: Explosive_Enemy
+  m_TagString: enemy_explosive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 20d62b70e28390d489fea3b5e970a1dd, type: 2}
+  - {fileID: 2100000, guid: 0f7b6818961b43b44b92eadad9fa096a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +128,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
