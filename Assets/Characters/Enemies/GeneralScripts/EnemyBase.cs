@@ -171,11 +171,11 @@ public class EnemyBase : MonoBehaviour
             {
                 piso.transform.parent.gameObject.GetComponent<TerrainBase>().CheckBorders(piso);
                 piso.transform.parent.gameObject.GetComponent<TerrainBase>().DestroyTile(piso);
-                //GameObject[,] terrainAll = piso.transform.parent.gameObject.GetComponent<TerrainBase>().GetArrayTerrain();
-                //Destroy(piso);
             }
         }
 
     }
+
+    
 
 }

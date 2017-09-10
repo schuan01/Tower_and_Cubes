@@ -1,0 +1,49 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TowerBase : MonoBehaviour
+{
+    public int maxLife = 4;
+
+    public List<GameObject> towerParts = new List<GameObject>();
+    void Start()
+    {
+        if (transform.gameObject.tag == "towerAll")
+        {
+            foreach (Transform child in transform)
+            {
+                towerParts.Add(child.gameObject);
+
+            }
+        }
+
+        GameObject cannon = GameObject.FindGameObjectWithTag("Player");
+        if (cannon != null)
+        {
+            towerParts.Add(cannon);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void DecreaseLife()
+    {
+        maxLife--;
+
+    }
+
+    void OnGUI()
+    {
+        if (maxLife <= 0)
+        {
+            GUI.Label(new Rect(Screen.width / 2, 0, 500f, 500f), "Perdiste");
+        }
+    }
+
+
+}

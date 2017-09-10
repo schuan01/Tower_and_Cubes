@@ -11,6 +11,9 @@ TagManager:
   - terrainQuad_Border
   - terrainAll
   - enemy_explosive
+  - towerAll
+  - terrainQuad_On
+  - terrainQuad_Off
   layers:
   - Default
   - TransparentFX

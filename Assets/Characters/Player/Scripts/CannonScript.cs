@@ -4,7 +4,7 @@ using UnityEngine;
 public class CannonScript : MonoBehaviour
 {
 
-    public float speed;
+
     public float lifetime_bullet = 2.0f;
     public float secondsToWaitShoot = 1.0f;
     private float timePassed = 0.0f;
@@ -56,16 +56,16 @@ public class CannonScript : MonoBehaviour
                     {
 
                         GameObject piso = Hit.transform.gameObject;
-                        if (piso != null && piso.tag.Contains("terrainQuad"))
+                        if (piso != null && piso.tag.Contains("terrainQuad") || piso.tag.Contains("enemy"))
                         {
+                            transform.LookAt(Hit.point, Vector3.down);
+                            GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
+                            newProjectile.transform.LookAt(Hit.point);
+                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
 
+                            Destroy(newProjectile, lifetime_bullet);
                         }
-                        transform.LookAt(Hit.point, Vector3.down);
-                        GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
-                        newProjectile.transform.LookAt(Hit.point);
-                        newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
 
-                        Destroy(newProjectile, lifetime_bullet);
 
                     }
 
@@ -75,7 +75,7 @@ public class CannonScript : MonoBehaviour
             }
             else
             {
-                 if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0))
                 {
 
                     timePassed = 0.0f;
@@ -88,16 +88,16 @@ public class CannonScript : MonoBehaviour
                     {
 
                         GameObject piso = Hit.transform.gameObject;
-                        if (piso != null && piso.tag.Contains("terrainQuad"))
+                        if (piso != null && piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("enemy"))
                         {
+                            transform.LookAt(Hit.point, Vector3.down);
+                            GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
+                            newProjectile.transform.LookAt(Hit.point);
+                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
 
+                            Destroy(newProjectile, lifetime_bullet);
                         }
-                        transform.LookAt(Hit.point, Vector3.down);
-                        GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
-                        newProjectile.transform.LookAt(Hit.point);
-                        newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
 
-                        Destroy(newProjectile, lifetime_bullet);
 
                     }
 

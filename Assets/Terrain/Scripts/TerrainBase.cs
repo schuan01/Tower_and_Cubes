@@ -10,7 +10,8 @@ public class TerrainBase : MonoBehaviour
     void Start()
     {
         SetTiles();
-       
+        ChangeClickableTiles();
+
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class TerrainBase : MonoBehaviour
         }
     }
 
-   
+
 
     public GameObject[,] GetArrayTerrain()
     {
@@ -45,7 +46,7 @@ public class TerrainBase : MonoBehaviour
 
     public void DestroyTile(GameObject tile)
     {
-        GameObject g = Instantiate(new GameObject(),tile.transform.position,Quaternion.identity);
+        GameObject g = Instantiate(new GameObject(), tile.transform.position, Quaternion.identity);
         g.AddComponent<NavMeshObstacle>();
         g.GetComponent<NavMeshObstacle>().carving = true;
         g.GetComponent<NavMeshObstacle>().carvingTimeToStationary = 0;
@@ -97,7 +98,7 @@ public class TerrainBase : MonoBehaviour
                 val.GetComponent<Renderer>().materials = mats;*/
                 val.tag = "terrainQuad_Border";
 
-                
+
 
 
             }
@@ -118,7 +119,7 @@ public class TerrainBase : MonoBehaviour
                 val.GetComponent<Renderer>().materials = mats;*/
                 val.tag = "terrainQuad_Border";
 
-                
+
             }
 
         }
@@ -137,7 +138,7 @@ public class TerrainBase : MonoBehaviour
                 val.GetComponent<Renderer>().materials = mats;*/
                 val.tag = "terrainQuad_Border";
 
-                
+
             }
 
         }
@@ -156,12 +157,39 @@ public class TerrainBase : MonoBehaviour
                 val.GetComponent<Renderer>().materials = mats;*/
                 val.tag = "terrainQuad_Border";
 
-                
+
             }
 
         }
 
 
+    }
+
+    void ChangeClickableTiles()
+    {
+        int indexI = 5;
+        int indexJ = 0;
+        for (int i = 0; i < listOfTiles.GetLength(0); i++)
+        {
+            for (int j = 0; j < listOfTiles.GetLength(1); j++)
+            {
+                if (i < indexI)
+                {
+                    GameObject g = listOfTiles[i, j];
+                    Material[] mats = g.GetComponent<Renderer>().materials;
+                    mats[0] = matBorder;
+                    g.GetComponent<Renderer>().materials = mats;
+
+                    listOfTiles[i, j].tag = "terrainQuad_Off";
+
+                }
+                else
+                {
+                     //listOfTiles[i, j].tag = "terrainQuad_On";
+                }
+
+            }
+        }
     }
 
 
