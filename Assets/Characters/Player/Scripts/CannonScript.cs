@@ -56,7 +56,7 @@ public class CannonScript : MonoBehaviour
                     {
 
                         GameObject piso = Hit.transform.gameObject;
-                        if (piso != null && piso.tag.Contains("terrainQuad") || piso.tag.Contains("enemy"))
+                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || piso.tag.Contains("enemy"))
                         {
                             transform.LookAt(Hit.point, Vector3.down);
                             GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
@@ -88,7 +88,7 @@ public class CannonScript : MonoBehaviour
                     {
 
                         GameObject piso = Hit.transform.gameObject;
-                        if (piso != null && piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("enemy"))
+                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || piso.tag.Contains("enemy"))
                         {
                             transform.LookAt(Hit.point, Vector3.down);
                             GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
@@ -102,6 +102,25 @@ public class CannonScript : MonoBehaviour
                     }
 
 
+
+                }
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GameObject cameraPos = GameObject.FindGameObjectWithTag("camera_positions");
+            if (cameraPos != null)
+            {
+
+                foreach (Transform child in cameraPos.transform)
+                {
+                    Camera.main.transform.position = child.position;
+                    Quaternion rot = Camera.main.transform.rotation;
+                    Camera.main.transform.rotation = Quaternion.Euler(45,rot.y,rot.z);
+                    GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
+                    terreno.GetComponent<TerrainBase>().ChangeClickableTiles(true);
 
                 }
             }

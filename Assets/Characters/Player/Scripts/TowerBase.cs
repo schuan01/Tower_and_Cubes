@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TowerBase : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class TowerBase : MonoBehaviour
         if (maxLife <= 0)
         {
             GUI.Label(new Rect(Screen.width / 2, 0, 500f, 500f), "Perdiste");
+            SceneManager.LoadScene("main");
         }
     }
 

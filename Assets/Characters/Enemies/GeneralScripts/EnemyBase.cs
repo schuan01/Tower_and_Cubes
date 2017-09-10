@@ -66,7 +66,7 @@ public class EnemyBase : MonoBehaviour
     {
 		if(gameObject.tag == "enemy_explosive" && isExploding == true)
 		{
-			
+			//isExploding = false;
 			DestroyCurrentTile();
 		}
 		
