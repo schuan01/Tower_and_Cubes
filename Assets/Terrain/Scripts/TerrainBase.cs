@@ -189,7 +189,7 @@ public class TerrainBase : MonoBehaviour
         if (!test)
         {
             int indexI = 5;
-            int indexJ = 0;
+            //int indexJ = 0;
             for (int i = 0; i < listOfTiles.GetLength(0); i++)
             {
                 for (int j = 0; j < listOfTiles.GetLength(1); j++)
@@ -244,7 +244,7 @@ public class TerrainBase : MonoBehaviour
             {
                 for (int j = 0; j < listOfTiles.GetLength(1); j++)
                 {
-                    if (i <= indexI && j <= indexJ )
+                    if (i <= indexI && j > indexJ )
                     {
                         GameObject g = listOfTiles[i, j];
                         Material[] mats = g.GetComponent<Renderer>().materials;

@@ -1297,7 +1297,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 240951494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.963699, y: 3.6134615, z: 0.3178192}
+  m_LocalPosition: {x: 5.963699, y: 0, z: 0.3178192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 938248545}
@@ -5089,7 +5089,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 938248544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.38, y: 9.76, z: -12.31}
+  m_LocalPosition: {x: -5.38, y: 13.82, z: -16.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 240951495}
@@ -6619,20 +6619,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -7101,8 +7087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPrefab:
-  - {fileID: 1025221245987610, guid: f33263a73754ba34fbe709b9f0f95154, type: 2}
-  - {fileID: 1025221245987610, guid: 6eea1b627568b0c4e907f6b3be7ad7e3, type: 2}
+  - {fileID: 1956814288681088, guid: 1bd4234cde9a6b049b6ff9b695fb27b9, type: 2}
+  - {fileID: 1749226700940254, guid: f88670d02a0b94c4f9bdb6ef896057b5, type: 2}
   - {fileID: 1025221245987610, guid: 7c1c1511350229447b46eea0820303ff, type: 2}
   respawns: []
   timeBetweenSpawns: 2
