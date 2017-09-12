@@ -38,7 +38,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             int randomIndexLocations = UnityEngine.Random.Range(0, respawns.Length);
             int randomIndexPrefab = UnityEngine.Random.Range(0, respawnPrefab.Length);
-            Vector3 ground = new Vector3(respawns[randomIndexLocations].transform.position.x, 0.45f, respawns[randomIndexLocations].transform.position.z);
+            Vector3 ground = new Vector3(respawns[randomIndexLocations].transform.position.x, 0, respawns[randomIndexLocations].transform.position.z);
             Instantiate(respawnPrefab[randomIndexPrefab], ground, Quaternion.identity);
         }
     }

@@ -56,8 +56,8 @@ public class EnemyBase : MonoBehaviour
     void DestroyEnemy()
     {
 		
-        StartCoroutine(SplitMesh(true));
-        //Destroy(gameObject); 
+        //StartCoroutine(SplitMesh(true));
+        Destroy(gameObject); 
 
 
     }
@@ -70,8 +70,8 @@ public class EnemyBase : MonoBehaviour
 			DestroyCurrentTile();
 		}
 		
-        StartCoroutine(SplitMesh(true));
-        //Destroy(gameObject);
+        //StartCoroutine(SplitMesh(true));
+        Destroy(gameObject);
 
 
     }
@@ -163,7 +163,6 @@ public class EnemyBase : MonoBehaviour
     public void DestroyCurrentTile()
     {
         RaycastHit hit;
-        Debug.DrawRay(transform.position, -transform.up * 10,Color.red,10);
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
         {
             GameObject piso = hit.transform.gameObject;

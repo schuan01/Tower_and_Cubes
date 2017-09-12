@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CannonScript : MonoBehaviour
 {
 
+    public List<GameObject> listCameras = new List<GameObject>();
+    public GameObject cameraPos_parent;
+
+    private int currentCameraIndex = -1;
 
     public float lifetime_bullet = 2.0f;
     public float secondsToWaitShoot = 1.0f;
@@ -29,6 +34,16 @@ public class CannonScript : MonoBehaviour
             //we are on a mobile device, so lets use touch input
             supportTouch = true;
         }
+
+        if (cameraPos_parent != null)
+        {
+            foreach (Transform child in cameraPos_parent.transform)
+            {
+                listCameras.Add(child.gameObject);
+            }
+
+            currentCameraIndex = listCameras.Count - 1;//arranca en ultimo indice
+        }
     }
 
     //float distance = 10.0f;
@@ -51,7 +66,9 @@ public class CannonScript : MonoBehaviour
                     Vector3 myTransform = transform.forward;
 
                     Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    Vector3 direction = transform.TransformDirection(Vector3.forward);
                     RaycastHit Hit;
+                    //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
                     if (Physics.Raycast(ray, out Hit, 1000))
                     {
 
@@ -84,9 +101,11 @@ public class CannonScript : MonoBehaviour
 
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit Hit;
+                    Vector3 direction = transform.TransformDirection(Vector3.forward);
+                    //if(Physics.SphereCast(ray.origin, 1, ray.direction, out Hit))
                     if (Physics.Raycast(ray, out Hit, 1000))
                     {
-
+                        //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
                         GameObject piso = Hit.transform.gameObject;
                         if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || piso.tag.Contains("enemy"))
                         {
@@ -108,26 +127,64 @@ public class CannonScript : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            GameObject cameraPos = GameObject.FindGameObjectWithTag("camera_positions");
-            if (cameraPos != null)
+            
+        }*/
+
+
+
+    }
+
+    public void changeCameraPositionLeft()
+    {
+        if (listCameras.Count > 0)
+        {
+            currentCameraIndex++;
+            if(currentCameraIndex > listCameras.Count -1)
             {
-
-                foreach (Transform child in cameraPos.transform)
-                {
-                    Camera.main.transform.position = child.position;
-                    Quaternion rot = Camera.main.transform.rotation;
-                    Camera.main.transform.rotation = Quaternion.Euler(45,rot.y,rot.z);
-                    GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
-                    terreno.GetComponent<TerrainBase>().ChangeClickableTiles(true);
-
-                }
+                currentCameraIndex = 0;
             }
+            GameObject nuevaPos = listCameras[currentCameraIndex];
+            
+
+            Camera.main.transform.position = nuevaPos.transform.position;
+            Quaternion rot = Camera.main.transform.rotation;
+            Camera.main.transform.Rotate(rot.x,90,rot.z,Space.World);
+            
+            //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
+            GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
+            //terreno.GetComponent<TerrainBase>().ChangeClickableTiles(true);
+
+
+
         }
+    }
+
+    public void changeCameraPositionRight()
+    {
+        if (listCameras.Count > 0)
+        {
+            currentCameraIndex--;
+            if(currentCameraIndex < 0)
+            {
+                currentCameraIndex = listCameras.Count - 1;//Ultimo indice
+            }
+
+            GameObject nuevaPos = listCameras[currentCameraIndex];
+            Debug.Log(nuevaPos.name);
+
+            Camera.main.transform.position = nuevaPos.transform.position;
+            Quaternion rot = Camera.main.transform.rotation;
+            Camera.main.transform.Rotate(rot.x,-90,rot.z,Space.World);
+            
+            //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
+            GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
+            //terreno.GetComponent<TerrainBase>().ChangeClickableTiles(true);
 
 
 
+        }
     }
 
 
