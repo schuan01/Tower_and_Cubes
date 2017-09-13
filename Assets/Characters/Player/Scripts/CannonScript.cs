@@ -66,14 +66,13 @@ public class CannonScript : MonoBehaviour
                     Vector3 myTransform = transform.forward;
 
                     Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-                    Vector3 direction = transform.TransformDirection(Vector3.forward);
                     RaycastHit Hit;
                     //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
                     if (Physics.Raycast(ray, out Hit, 1000))
                     {
 
                         GameObject piso = Hit.transform.gameObject;
-                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || piso.tag.Contains("enemy"))
+                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
                         {
                             transform.LookAt(Hit.point, Vector3.down);
                             GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
@@ -101,13 +100,13 @@ public class CannonScript : MonoBehaviour
 
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit Hit;
-                    Vector3 direction = transform.TransformDirection(Vector3.forward);
+                    //Vector3 direction = transform.TransformDirection(Vector3.forward);
                     //if(Physics.SphereCast(ray.origin, 1, ray.direction, out Hit))
                     if (Physics.Raycast(ray, out Hit, 1000))
                     {
                         //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
                         GameObject piso = Hit.transform.gameObject;
-                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || piso.tag.Contains("enemy"))
+                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
                         {
                             transform.LookAt(Hit.point, Vector3.down);
                             GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
@@ -150,11 +149,11 @@ public class CannonScript : MonoBehaviour
 
             Camera.main.transform.position = nuevaPos.transform.position;
             Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(rot.x,90,rot.z,Space.World);
+            Camera.main.transform.Rotate(0,90,0,Space.World);
             
             //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
             GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
-            //terreno.GetComponent<TerrainBase>().ChangeClickableTiles(true);
+            terreno.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
 
 
 
@@ -172,15 +171,14 @@ public class CannonScript : MonoBehaviour
             }
 
             GameObject nuevaPos = listCameras[currentCameraIndex];
-            Debug.Log(nuevaPos.name);
 
             Camera.main.transform.position = nuevaPos.transform.position;
             Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(rot.x,-90,rot.z,Space.World);
+            Camera.main.transform.Rotate(0,-90,0,Space.World);
             
             //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
             GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
-            //terreno.GetComponent<TerrainBase>().ChangeClickableTiles(true);
+            terreno.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
 
 
 

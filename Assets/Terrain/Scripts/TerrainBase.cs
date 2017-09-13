@@ -10,7 +10,7 @@ public class TerrainBase : MonoBehaviour
     void Start()
     {
         SetTiles();
-        ChangeClickableTiles(false);
+        ChangeClickableTiles(new GameObject("Bot"));
 
     }
 
@@ -184,9 +184,10 @@ public class TerrainBase : MonoBehaviour
 
     }
 
-    public void ChangeClickableTiles(bool test)
+    public void ChangeClickableTiles(GameObject goPosition)
     {
-        if (!test)
+
+        if (goPosition.name.Contains("Bot"))
         {
             int indexI = 5;
             //int indexJ = 0;
@@ -197,17 +198,20 @@ public class TerrainBase : MonoBehaviour
                     if (i < indexI)
                     {
                         GameObject g = listOfTiles[i, j];
-                        Material[] mats = g.GetComponent<Renderer>().materials;
-                        mats[0] = matBorder;
-                        g.GetComponent<Renderer>().materials = mats;
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matBorder;
+                            g.GetComponent<Renderer>().materials = mats;
 
-                        if (listOfTiles[i, j].tag == "terrainQuad_Border")
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_Border_Off";
-                        }
-                        else
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_Off";
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Off";
+                            }
                         }
 
 
@@ -216,17 +220,20 @@ public class TerrainBase : MonoBehaviour
                     else
                     {
                         GameObject g = listOfTiles[i, j];
-                        Material[] mats = g.GetComponent<Renderer>().materials;
-                        mats[0] = matGreen;
-                        g.GetComponent<Renderer>().materials = mats;
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matGreen;
+                            g.GetComponent<Renderer>().materials = mats;
 
-                        if (listOfTiles[i, j].tag == "terrainQuad_Border")
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_Border_On";
-                        }
-                        else
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_On";
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_On";
+                            }
                         }
 
                     }
@@ -235,29 +242,32 @@ public class TerrainBase : MonoBehaviour
             }
         }
 
-        if (test)
+        if (goPosition.name.Contains("Left"))
         {
-            
+
             int indexI = 10;
             int indexJ = 5;
             for (int i = 0; i < listOfTiles.GetLength(0); i++)
             {
                 for (int j = 0; j < listOfTiles.GetLength(1); j++)
                 {
-                    if (i <= indexI && j > indexJ )
+                    if (i <= indexI && j > indexJ)
                     {
                         GameObject g = listOfTiles[i, j];
-                        Material[] mats = g.GetComponent<Renderer>().materials;
-                        mats[0] = matBorder;
-                        g.GetComponent<Renderer>().materials = mats;
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matBorder;
+                            g.GetComponent<Renderer>().materials = mats;
 
-                        if (listOfTiles[i, j].tag == "terrainQuad_Border")
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_Border_Off";
-                        }
-                        else
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_Off";
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Off";
+                            }
                         }
 
 
@@ -266,17 +276,132 @@ public class TerrainBase : MonoBehaviour
                     else
                     {
                         GameObject g = listOfTiles[i, j];
-                        Material[] mats = g.GetComponent<Renderer>().materials;
-                        mats[0] = matGreen;
-                        g.GetComponent<Renderer>().materials = mats;
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matGreen;
+                            g.GetComponent<Renderer>().materials = mats;
 
-                        if (listOfTiles[i, j].tag == "terrainQuad_Border")
-                        {
-                            listOfTiles[i, j].tag = "terrainQuad_Border_On";
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_On";
+                            }
                         }
-                        else
+
+                    }
+
+                }
+            }
+        }
+
+        if (goPosition.name.Contains("Top"))
+        {
+
+            int indexI = 5;
+            //int indexJ = 0;
+            for (int i = 0; i < listOfTiles.GetLength(0); i++)
+            {
+                for (int j = 0; j < listOfTiles.GetLength(1); j++)
+                {
+                    if (i > indexI)
+                    {
+                        GameObject g = listOfTiles[i, j];
+                        if (g != null)
                         {
-                            listOfTiles[i, j].tag = "terrainQuad_On";
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matBorder;
+                            g.GetComponent<Renderer>().materials = mats;
+
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Off";
+                            }
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        GameObject g = listOfTiles[i, j];
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matGreen;
+                            g.GetComponent<Renderer>().materials = mats;
+
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_On";
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        if (goPosition.name.Contains("Right"))
+        {
+
+            int indexI = 10;
+            int indexJ = 5;
+            for (int i = 0; i < listOfTiles.GetLength(0); i++)
+            {
+                for (int j = 0; j < listOfTiles.GetLength(1); j++)
+                {
+                    if (i <= indexI && j < indexJ)
+                    {
+                        GameObject g = listOfTiles[i, j];
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matBorder;
+                            g.GetComponent<Renderer>().materials = mats;
+
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Off";
+                            }
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        GameObject g = listOfTiles[i, j];
+                        if (g != null)
+                        {
+                            Material[] mats = g.GetComponent<Renderer>().materials;
+                            mats[0] = matGreen;
+                            g.GetComponent<Renderer>().materials = mats;
+
+                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
+                            }
+                            else
+                            {
+                                listOfTiles[i, j].tag = "terrainQuad_On";
+                            }
                         }
 
                     }

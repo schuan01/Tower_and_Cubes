@@ -13,15 +13,15 @@ public class EnemyBase : MonoBehaviour
 	private bool isExploding = false;
     void Start()
     {
-        if (gameObject.tag == "enemy_normal")
+        if (gameObject.tag.Contains( "enemy_normal"))
         {
             enemyLife = 1;
         }
-        else if (gameObject.tag == "enemy_explosive")
+        else if (gameObject.tag.Contains( "enemy_explosive"))
         {
             enemyLife = 1;
         }
-        else if (gameObject.tag == "enemy_giant")
+        else if (gameObject.tag.Contains( "enemy_giant"))
         {
             enemyLife = 3;
         }
@@ -30,7 +30,7 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if(gameObject.tag == "enemy_explosive")
+		if(gameObject.tag.Contains("enemy_explosive"))
 		{
 			timeBeforeExplode -= Time.deltaTime;
 			if(timeBeforeExplode <= 0 && isExploding == false)
@@ -64,7 +64,7 @@ public class EnemyBase : MonoBehaviour
 
     void DestroyEnemyWithTile()
     {
-		if(gameObject.tag == "enemy_explosive" && isExploding == true)
+		if(gameObject.tag.Contains("enemy_explosive") && isExploding == true)
 		{
 			//isExploding = false;
 			DestroyCurrentTile();

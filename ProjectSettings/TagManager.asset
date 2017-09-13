@@ -17,6 +17,9 @@ TagManager:
   - terrainQuad_Border_Off
   - terrainQuad_Border_On
   - camera_positions
+  - enemy_normal_off
+  - enemy_giant_off
+  - enemy_explosive_off
   layers:
   - Default
   - TransparentFX

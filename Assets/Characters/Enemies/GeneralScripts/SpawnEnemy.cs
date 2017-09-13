@@ -38,8 +38,17 @@ public class SpawnEnemy : MonoBehaviour
         {
             int randomIndexLocations = UnityEngine.Random.Range(0, respawns.Length);
             int randomIndexPrefab = UnityEngine.Random.Range(0, respawnPrefab.Length);
+            GameObject piso = respawns[randomIndexLocations];
+           
+            
             Vector3 ground = new Vector3(respawns[randomIndexLocations].transform.position.x, 0, respawns[randomIndexLocations].transform.position.z);
-            Instantiate(respawnPrefab[randomIndexPrefab], ground, Quaternion.identity);
+
+            GameObject go = Instantiate(respawnPrefab[randomIndexPrefab], ground, Quaternion.identity);
+            if(piso.tag.Contains("Off"))
+            {
+               
+                go.tag = go.tag + "_off";
+            }
         }
     }
 }
