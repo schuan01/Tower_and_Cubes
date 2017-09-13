@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114343900393239502}
   - component: {fileID: 114791622441242370}
   - component: {fileID: 195499812792813382}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy_giant_prefab
   m_TagString: enemy_giant
   m_Icon: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec03d3bf1972e024aa271e07b4a38052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeExplode: 3
 --- !u!114 &114791622441242370
 MonoBehaviour:
   m_ObjectHideFlags: 1

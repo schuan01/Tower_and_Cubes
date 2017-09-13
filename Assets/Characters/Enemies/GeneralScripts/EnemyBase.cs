@@ -1,6 +1,5 @@
 ﻿
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -8,38 +7,69 @@ public class EnemyBase : MonoBehaviour
 
     // Use this for initialization
 
+
+    
+    
+   
     private int enemyLife = 1;
-	private float timeBeforeExplode = 3.0f;
-	private bool isExploding = false;
+    public float timeBeforeExplode = 3.0f;
+
+    private float timeBetweenCheck = 0.5f;
+    private bool isExploding = false;
+    private GameObject piso = null;
     void Start()
     {
-        if (gameObject.tag.Contains( "enemy_normal"))
+        
+        
+
+        if (gameObject.tag.Contains("enemy_normal"))
         {
             enemyLife = 1;
         }
-        else if (gameObject.tag.Contains( "enemy_explosive"))
+        else if (gameObject.tag.Contains("enemy_explosive"))
         {
             enemyLife = 1;
         }
-        else if (gameObject.tag.Contains( "enemy_giant"))
+        else if (gameObject.tag.Contains("enemy_giant"))
         {
             enemyLife = 3;
         }
+
+        InvokeRepeating("ChangeTagByTile", 2, timeBetweenCheck);//A partir del segundo 2, cada 0.5 segundos
     }
 
     // Update is called once per frame
     void Update()
     {
-		if(gameObject.tag.Contains("enemy_explosive"))
-		{
-			timeBeforeExplode -= Time.deltaTime;
-			if(timeBeforeExplode <= 0 && isExploding == false)
-			{
-				isExploding = true;
-				DestroyEnemyWithTile();
-				
-			}
-		}
+        if (gameObject.tag.Contains("enemy_explosive"))
+        {
+            timeBeforeExplode -= Time.deltaTime;
+            if (timeBeforeExplode <= 0 && isExploding == false)
+            {
+                isExploding = true;
+                DestroyEnemyWithTile();
+
+            }
+        }
+    }
+
+    
+
+    private void ChangeTagByTile()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
+        {
+            piso = hit.transform.gameObject;
+            if (piso != null && piso.tag.Contains("Off") && !gameObject.tag.Contains("off"))
+            {
+                gameObject.tag = gameObject.tag + "_off";
+            }
+            else if (piso != null && piso.tag.Contains("On"))
+            {
+                gameObject.tag = gameObject.tag.Replace("_off", "");//Sea el On o el off
+            }
+        }
     }
 
     public void DecreseLife()
@@ -47,6 +77,7 @@ public class EnemyBase : MonoBehaviour
         enemyLife -= 1;
         if (enemyLife == 0)
         {
+            
             DestroyEnemy();
         }
 
@@ -55,21 +86,23 @@ public class EnemyBase : MonoBehaviour
 
     void DestroyEnemy()
     {
-		
+
         //StartCoroutine(SplitMesh(true));
-        Destroy(gameObject); 
+        GameObject go = GameObject.FindGameObjectWithTag("sceneBehavior");
+        go.GetComponent<ScoreCounter>().ChangeScore();
+        Destroy(gameObject);
 
 
     }
 
     void DestroyEnemyWithTile()
     {
-		if(gameObject.tag.Contains("enemy_explosive") && isExploding == true)
-		{
-			//isExploding = false;
-			DestroyCurrentTile();
-		}
-		
+        if (gameObject.tag.Contains("enemy_explosive") && isExploding == true)
+        {
+            //isExploding = false;
+            DestroyCurrentTile();
+        }
+
         //StartCoroutine(SplitMesh(true));
         Destroy(gameObject);
 
@@ -165,16 +198,16 @@ public class EnemyBase : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
         {
-            GameObject piso = hit.transform.gameObject;
-            if (piso != null && piso.tag.Contains("terrainQuad"))
+            GameObject go = hit.transform.gameObject;
+            if (go != null && go.tag.Contains("terrainQuad"))
             {
-                piso.transform.parent.gameObject.GetComponent<TerrainBase>().CheckBorders(piso);
-                piso.transform.parent.gameObject.GetComponent<TerrainBase>().DestroyTile(piso);
+                go.transform.parent.gameObject.GetComponent<TerrainBase>().CheckBorders(go);
+                go.transform.parent.gameObject.GetComponent<TerrainBase>().DestroyTile(go);
             }
         }
 
     }
 
-    
+
 
 }

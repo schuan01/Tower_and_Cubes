@@ -51,6 +51,9 @@ public class CannonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int layerMask = 1 << 3;
+        layerMask = ~layerMask;
+
         timePassed += Time.deltaTime;
 
 
@@ -58,35 +61,38 @@ public class CannonScript : MonoBehaviour
         {
             if (supportTouch)
             {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                if (Input.touchCount > 0)
                 {
-
-                    timePassed = 0.0f;
-
-                    Vector3 myTransform = transform.forward;
-
-                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-                    RaycastHit Hit;
-                    //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
-                    if (Physics.Raycast(ray, out Hit, 1000))
+                    if (Input.GetTouch(0).phase == TouchPhase.Began)
                     {
 
-                        GameObject piso = Hit.transform.gameObject;
-                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
-                        {
-                            transform.LookAt(Hit.point, Vector3.down);
-                            GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
-                            newProjectile.transform.LookAt(Hit.point);
-                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
+                        timePassed = 0.0f;
 
-                            Destroy(newProjectile, lifetime_bullet);
+                        Vector3 myTransform = transform.forward;
+
+                        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                        RaycastHit Hit;
+                        //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
+                        if (Physics.Raycast(ray, out Hit, 1000,layerMask))
+                        {
+
+                            GameObject piso = Hit.transform.gameObject;
+                            if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
+                            {
+                                transform.LookAt(Hit.point, Vector3.down);
+                                GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
+                                newProjectile.transform.LookAt(Hit.point);
+                                newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
+
+                                Destroy(newProjectile, lifetime_bullet);
+                            }
+
+
                         }
 
 
+
                     }
-
-
-
                 }
             }
             else
@@ -102,7 +108,7 @@ public class CannonScript : MonoBehaviour
                     RaycastHit Hit;
                     //Vector3 direction = transform.TransformDirection(Vector3.forward);
                     //if(Physics.SphereCast(ray.origin, 1, ray.direction, out Hit))
-                    if (Physics.Raycast(ray, out Hit, 1000))
+                    if (Physics.Raycast(ray, out Hit, 1000,layerMask))
                     {
                         //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
                         GameObject piso = Hit.transform.gameObject;
@@ -140,17 +146,17 @@ public class CannonScript : MonoBehaviour
         if (listCameras.Count > 0)
         {
             currentCameraIndex++;
-            if(currentCameraIndex > listCameras.Count -1)
+            if (currentCameraIndex > listCameras.Count - 1)
             {
                 currentCameraIndex = 0;
             }
             GameObject nuevaPos = listCameras[currentCameraIndex];
-            
+
 
             Camera.main.transform.position = nuevaPos.transform.position;
             Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(0,90,0,Space.World);
-            
+            Camera.main.transform.Rotate(0, 90, 0, Space.World);
+
             //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
             GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
             terreno.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
@@ -165,7 +171,7 @@ public class CannonScript : MonoBehaviour
         if (listCameras.Count > 0)
         {
             currentCameraIndex--;
-            if(currentCameraIndex < 0)
+            if (currentCameraIndex < 0)
             {
                 currentCameraIndex = listCameras.Count - 1;//Ultimo indice
             }
@@ -174,8 +180,8 @@ public class CannonScript : MonoBehaviour
 
             Camera.main.transform.position = nuevaPos.transform.position;
             Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(0,-90,0,Space.World);
-            
+            Camera.main.transform.Rotate(0, -90, 0, Space.World);
+
             //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
             GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
             terreno.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114699397566023566}
   - component: {fileID: 195666555780244384}
   - component: {fileID: 65865382179474966}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: enemy_normal_blend
   m_TagString: enemy_normal
   m_Icon: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec03d3bf1972e024aa271e07b4a38052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeExplode: 3
 --- !u!114 &114699397566023566
 MonoBehaviour:
   m_ObjectHideFlags: 1
