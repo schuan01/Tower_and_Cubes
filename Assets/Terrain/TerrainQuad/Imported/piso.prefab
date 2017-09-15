@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4104654947757012}
   - component: {fileID: 33766840994736080}
   - component: {fileID: 23231920881641642}
+  - component: {fileID: 65211517010469818}
   m_Layer: 0
   m_Name: piso
   m_TagString: Untagged
@@ -81,3 +82,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114206899614220}
   m_Mesh: {fileID: 4300000, guid: 1aea1ae72c8900442a6d29b40a21b8fc, type: 3}
+--- !u!65 &65211517010469818
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114206899614220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.07256979, z: 0.06275291}
+  m_Center: {x: -4.656613e-10, y: -0.03309779, z: 0}
