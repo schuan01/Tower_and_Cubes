@@ -16,6 +16,8 @@ public class CannonScript : MonoBehaviour
 
     private bool supportTouch = true;
 
+    public GameObject bullet;
+
 
 
     void Start()
@@ -47,7 +49,7 @@ public class CannonScript : MonoBehaviour
     }
 
     //float distance = 10.0f;
-    public GameObject prefab;
+
     // Update is called once per frame
     void Update()
     {
@@ -73,18 +75,22 @@ public class CannonScript : MonoBehaviour
                         Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                         RaycastHit Hit;
                         //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
-                        if (Physics.Raycast(ray, out Hit, 1000,layerMask))
+                        if (Physics.Raycast(ray, out Hit, 1000, layerMask))
                         {
 
                             GameObject piso = Hit.transform.gameObject;
                             if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
                             {
-                                transform.LookAt(Hit.point, Vector3.down);
-                                GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
-                                newProjectile.transform.LookAt(Hit.point);
-                                newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
+                               Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
+                            transform.LookAt(targetPosition);
+                            //transform.LookAt(Hit.point);
+                            //transform.LookAt(ray.GetPoint(1000), Vector3.down);
+                            //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
+                            GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
+                            newProjectile.transform.LookAt(Hit.point);
+                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2500);
 
-                                Destroy(newProjectile, lifetime_bullet);
+                            Destroy(newProjectile, lifetime_bullet);
                             }
 
 
@@ -108,16 +114,21 @@ public class CannonScript : MonoBehaviour
                     RaycastHit Hit;
                     //Vector3 direction = transform.TransformDirection(Vector3.forward);
                     //if(Physics.SphereCast(ray.origin, 1, ray.direction, out Hit))
-                    if (Physics.Raycast(ray, out Hit, 1000,layerMask))
+                    if (Physics.Raycast(ray, out Hit, 1000, layerMask))
                     {
                         //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
                         GameObject piso = Hit.transform.gameObject;
                         if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
                         {
-                            transform.LookAt(Hit.point, Vector3.down);
-                            GameObject newProjectile = Instantiate(prefab, transform.GetChild(1).position, Quaternion.identity) as GameObject;
+                           
+                            Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
+                            transform.LookAt(targetPosition);
+                            //transform.LookAt(Hit.point);
+                            //transform.LookAt(ray.GetPoint(1000), Vector3.down);
+                            //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
+                            GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
                             newProjectile.transform.LookAt(Hit.point);
-                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2000);
+                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2500);
 
                             Destroy(newProjectile, lifetime_bullet);
                         }

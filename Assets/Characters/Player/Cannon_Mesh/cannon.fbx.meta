@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 87f22ac40c7851a46af2a8e86f3f4c3c
-timeCreated: 1505488553
+guid: e436cc25d1887944cbe10e229422cfc1
+timeCreated: 1505420903
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Torre
+    4300000: Cannon
   materials:
     importMaterials: 1
     materialName: 0

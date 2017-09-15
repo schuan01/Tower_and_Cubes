@@ -19,6 +19,7 @@ public class MyTools
         {
             GameObject parent = MonoBehaviour.Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
             parent.name = "TerrainAll";
+            parent.tag = "terrainAll";
             parent.AddComponent(typeof(TerrainBase));
 
             pisoPrefab = Selection.activeObject as GameObject;
@@ -36,6 +37,10 @@ public class MyTools
                     if (indexJ == 0 || indexJ == 10)
                     {
                         pisoCreado.tag = "terrainQuad_Border";
+                    }
+                    else
+                    {
+
                     }
 
                     if (indexI == 0 || indexI == 10)
