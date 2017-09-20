@@ -1,15 +1,37 @@
 fileFormatVersion: 2
-guid: 7670b92acb1f78a44971e8368905cf0b
-timeCreated: 1505758484
+guid: 4f024dbdedc12ea428cfa5e39f697a91
+timeCreated: 1505931753
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: tower_base
+    100004: tower_bot
+    100006: tower_door
+    100008: tower_mid
+    100010: tower_top
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Piso
+    400002: tower_base
+    400004: tower_bot
+    400006: tower_door
+    400008: tower_mid
+    400010: tower_top
+    2300000: tower_base
+    2300002: tower_bot
+    2300004: tower_door
+    2300006: tower_mid
+    2300008: tower_top
+    3300000: tower_base
+    3300002: tower_bot
+    3300004: tower_door
+    3300006: tower_mid
+    3300008: tower_top
+    4300000: tower_door
+    4300002: tower_base
+    4300004: tower_mid
+    4300006: tower_bot
+    4300008: tower_top
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,7 +76,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

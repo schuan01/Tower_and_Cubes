@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TowerBase : MonoBehaviour
 {
-    public int maxLife = 4;
+    public int maxLife = 3;
 
     public List<GameObject> towerParts = new List<GameObject>();
     void Start()
@@ -14,7 +14,10 @@ public class TowerBase : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                towerParts.Add(child.gameObject);
+                if(child.tag != "towerIgnore")
+                {
+                    towerParts.Add(child.gameObject);
+                }
 
             }
         }

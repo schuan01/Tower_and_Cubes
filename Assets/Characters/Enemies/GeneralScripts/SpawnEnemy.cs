@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+using UnityEngine.AI;
 //Spawn an enemy in a random Point each 2 seconds
 public class SpawnEnemy : MonoBehaviour
 {
@@ -12,6 +12,16 @@ public class SpawnEnemy : MonoBehaviour
     private float[] probability = new float[3];
 
     public float timeBetweenSpawns = 2.0f;
+
+    public float baseSpeed = 0;
+
+    public float multiplier = 0.3f;
+
+    public float timeBetweenSpeedChange = 4;
+
+
+
+
 
     void Start()
     {
@@ -36,6 +46,7 @@ public class SpawnEnemy : MonoBehaviour
         }
 
         InvokeRepeating("SpawnRandomEnemy", 2, timeBetweenSpawns);//A partir del segundo 2, cada 2 segundos
+        InvokeRepeating("ChangeSpeedMultiplier", 5, timeBetweenSpeedChange);
     }
 
 
@@ -43,7 +54,13 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
+    }
+
+    void ChangeSpeedMultiplier()
+    {
+        baseSpeed = baseSpeed + multiplier;
     }
 
     int ChooseRandomByFloat()
@@ -57,22 +74,22 @@ public class SpawnEnemy : MonoBehaviour
         }
 
         float randomPoint = UnityEngine.Random.value * total;
-        
+
 
         for (int i = 0; i < probability.Length; i++)
         {
             if (randomPoint < probability[i])
             {
-                
+
                 return i;
-                
+
             }
             else
             {
                 randomPoint -= probability[i];
             }
         }
-        
+
         return probability.Length - 1;
     }
 
@@ -103,6 +120,10 @@ public class SpawnEnemy : MonoBehaviour
 
                 go.tag = go.tag + "_off";
             }
+
+            go.GetComponent<EnemyBase>().SetBaseVelocity(baseSpeed);
+
+           
         }
     }
 }

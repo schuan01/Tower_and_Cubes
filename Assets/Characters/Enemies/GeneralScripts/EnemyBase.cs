@@ -1,26 +1,29 @@
 ﻿
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
 
     // Use this for initialization
 
 
-    
-    
-   
+
+    public bool isStatic = false;
+
     private int enemyLife = 1;
     public float timeBeforeExplode = 3.0f;
 
-    private float timeBetweenCheck = 0.5f;
+    private float timeBetweenCheck = 0.1f;
+    
     private bool isExploding = false;
     private GameObject piso = null;
+
+    
+
+    
     void Start()
     {
-        
-        
 
         if (gameObject.tag.Contains("enemy_normal"))
         {
@@ -36,6 +39,7 @@ public class EnemyBase : MonoBehaviour
         }
 
         InvokeRepeating("ChangeTagByTile", 2, timeBetweenCheck);//A partir del segundo 2, cada 0.5 segundos
+        
     }
 
     // Update is called once per frame
@@ -53,8 +57,10 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    
-
+    public void SetBaseVelocity(float multiplier)
+    {
+         GetComponent<NavMeshAgent>().speed = GetComponent<NavMeshAgent>().speed + multiplier;
+    }
     private void ChangeTagByTile()
     {
         RaycastHit hit;
@@ -77,7 +83,7 @@ public class EnemyBase : MonoBehaviour
         enemyLife -= 1;
         if (enemyLife == 0)
         {
-            
+
             DestroyEnemy();
         }
 

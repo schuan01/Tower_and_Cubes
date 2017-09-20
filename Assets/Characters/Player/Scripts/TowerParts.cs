@@ -19,9 +19,12 @@ public class TowerParts : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("choco");
 
         if (other.gameObject.tag.Contains("enemy"))
         {
+            GameObject parteSiguiente = null;
+            Vector3 siguienteUbicacion;
             //ELIMINO LA INSTANCIA Y DE LA LISTA TAMBIEN
             int i = -1;
             foreach (GameObject g in gameObject.transform.parent.GetComponent<TowerBase>().towerParts)
@@ -30,10 +33,27 @@ public class TowerParts : MonoBehaviour
                 if (g.name == gameObject.name)
                 {
                     gameObject.transform.parent.GetComponent<TowerBase>().towerParts.RemoveAt(i);
+                    if(gameObject.transform.parent.GetComponent<TowerBase>().towerParts.Count - 1 >= i+1)
+                    {
+                        parteSiguiente = gameObject.transform.parent.GetComponent<TowerBase>().towerParts[i+1];
+                    }
                     break;
                 }
             }
 
+
+            if(parteSiguiente != null && parteSiguiente.tag != "towerPoint")
+            {
+                i = 0;
+                foreach (GameObject g in gameObject.transform.parent.GetComponent<TowerBase>().towerParts)
+                {
+                    if(parteSiguiente.name.Contains(g.name))
+                    {
+                        //siguienteUbicacion = g.transform.position;
+                        
+                    }
+                }
+            }
             //ANTES DE DESTRUIR ME GUARDO LA UBICACION
             Vector3 ubiAnterior = gameObject.transform.position;
             Vector3 ubiActual;
@@ -41,6 +61,8 @@ public class TowerParts : MonoBehaviour
             i = 0;
             Destroy(other.gameObject);
             Destroy(gameObject);
+
+            //Recoloco todas las piezas
             foreach (GameObject g in gameObject.transform.parent.GetComponent<TowerBase>().towerParts)
             {
                 if (i == 0)//Si es solo el siguiente, activo el trigger

@@ -21,6 +21,8 @@ TagManager:
   - enemy_giant_off
   - enemy_explosive_off
   - sceneBehavior
+  - towerPoint
+  - towerIgnore
   layers:
   - Default
   - TransparentFX
@@ -31,7 +33,7 @@ TagManager:
   - 
   - 
   - Particle
-  - 
+  - TowerIgnore
   - 
   - 
   - 
