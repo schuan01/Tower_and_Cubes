@@ -19,10 +19,18 @@ public class TowerParts : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("choco");
+        if (other.gameObject.tag.Contains("enemy"))
+        {
+            Destroy(other.gameObject);
+            transform.parent.GetComponent<TowerBase>().DecreaseLife();
+            
+        }
+
+        /*Debug.Log("choco");
 
         if (other.gameObject.tag.Contains("enemy"))
         {
+            
             GameObject parteSiguiente = null;
             Vector3 siguienteUbicacion;
             //ELIMINO LA INSTANCIA Y DE LA LISTA TAMBIEN
@@ -78,6 +86,6 @@ public class TowerParts : MonoBehaviour
 
             transform.parent.GetComponent<TowerBase>().DecreaseLife();
 
-        }
+        }*/
     }
 }

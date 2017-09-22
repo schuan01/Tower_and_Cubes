@@ -45,7 +45,7 @@ public class SpawnEnemy : MonoBehaviour
             cont++;
         }
 
-        InvokeRepeating("SpawnRandomEnemy", 2, timeBetweenSpawns);//A partir del segundo 2, cada 2 segundos
+        //InvokeRepeating("SpawnRandomEnemy", 2, timeBetweenSpawns);//A partir del segundo 2, cada 2 segundos
         InvokeRepeating("ChangeSpeedMultiplier", 5, timeBetweenSpeedChange);
     }
 
@@ -93,7 +93,7 @@ public class SpawnEnemy : MonoBehaviour
         return probability.Length - 1;
     }
 
-    void SpawnRandomEnemy()
+    public GameObject SpawnRandomEnemy()
     {
         respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border_On");//Obtiene todos los puntos,bordes;
         GameObject[] array2 = GameObject.FindGameObjectsWithTag("terrainQuad_Border_Off");//Obtiene todos los puntos,bordes;
@@ -121,9 +121,13 @@ public class SpawnEnemy : MonoBehaviour
                 go.tag = go.tag + "_off";
             }
 
-            go.GetComponent<EnemyBase>().SetBaseVelocity(baseSpeed);
+            //go.GetComponent<EnemyBase>().SetBaseVelocity(baseSpeed);
+
+            return go;
 
            
         }
+
+        return null;
     }
 }
