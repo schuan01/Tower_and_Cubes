@@ -22,9 +22,9 @@ public class ScoreCounter : MonoBehaviour {
 		countText.text = "Puntaje: "+ score.ToString();
 	}
 
-	public void ChangeWave()
+	public void ChangeWave(int wave)
 	{
-		currentWave++;
+		currentWave = wave;
 		waveText.text = "Oleada: "+ currentWave.ToString();
 	}
 }

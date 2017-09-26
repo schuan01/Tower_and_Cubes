@@ -23,7 +23,9 @@ public class TowerParts : MonoBehaviour
         {
             Destroy(other.gameObject);
             transform.parent.GetComponent<TowerBase>().DecreaseLife();
-            
+            GameObject go = GameObject.FindGameObjectWithTag("gameState");
+            go.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
+
         }
 
         /*Debug.Log("choco");

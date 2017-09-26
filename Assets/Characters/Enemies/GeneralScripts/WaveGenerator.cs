@@ -12,24 +12,24 @@ public class WaveGenerator : MonoBehaviour
 
     public float timeBeforeNextWave = 5.0f;//3 segundos
 
-    private bool waveStart = false;
+    public bool waveStart = false;
 
 
-    private float timeLapsedSpawns = 0;
-    private float timeLapsedWaves = 0;
+    public float timeLapsedSpawns = 0;
+    public float timeLapsedWaves = 0;
 
     public float timeBetweenSpawns = 2.0f;
 
-	public float spawnDecreser = 0.2f; 
+    public float spawnDecreser = 0.2f;
 
-    private int currentEnemiesSpawn;
+    public int currentEnemiesSpawn;
 
-	private int enemiesLeft;
+    public int enemiesLeft;
 
     // Use this for initialization
     void Start()
     {
-
+        enemiesLeft = startEnemies;
     }
 
     // Update is called once per frame
@@ -38,26 +38,30 @@ public class WaveGenerator : MonoBehaviour
 
         timeLapsedSpawns += Time.deltaTime;
         timeLapsedWaves += Time.deltaTime;
+        // Debug.Log("Tiempo que va de Spawn: " + timeLapsedSpawns);
+        // Debug.Log("Tiempo que va de Wave: " + timeLapsedWaves);
 
 
         //Chequea el tiempo entre oleadas
         if (timeLapsedWaves >= timeBeforeNextWave && !waveStart)
         {
-            waveStart = true;
-            Debug.Log("Empezo oleada");
+            StartWave();
+
         }
 
         //Chequea el tiempo entre aparicion de enemigos
         if (timeLapsedSpawns >= timeBetweenSpawns && waveStart)
         {
 
-            if (currentEnemiesSpawn >= startEnemies)
+            if (enemiesLeft <= 0)
             {
 
-				ResetWave();
+                ResetWave();
+                timeLapsedSpawns = 0;
             }
-            else
+            else if (currentEnemiesSpawn <= startEnemies)
             {
+
                 SpawnEnemy();
                 timeLapsedSpawns = 0;
             }
@@ -68,19 +72,37 @@ public class WaveGenerator : MonoBehaviour
 
     void SpawnEnemy()
     {
-		GetComponent<SpawnEnemy>().SpawnRandomEnemy();
+
+        GetComponent<SpawnEnemy>().SpawnRandomEnemy();
         currentEnemiesSpawn++;
     }
 
     void ResetWave()
     {
-		waveCount++;
+        Debug.Log("Termino oleada");
         waveStart = false;
         timeLapsedWaves = 0;
-        Debug.Log("Termino oleada");
         currentEnemiesSpawn = 0;
         startEnemies += enemiesAddedAfterWave;
-		timeBetweenSpawns -= spawnDecreser;
+        enemiesLeft = startEnemies;
+        timeBetweenSpawns -= spawnDecreser;
+
+
+    }
+
+    public void ChangeEnemiesLeft()
+    {
+        
+        enemiesLeft--;
+    }
+
+    private void StartWave()
+    {
+        waveStart = true;
+        Debug.Log("Empezo oleada");
+        enemiesLeft = startEnemies;
+        waveCount++;
+        GetComponent<ScoreCounter>().ChangeWave(waveCount);
     }
 
 

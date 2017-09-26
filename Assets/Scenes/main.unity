@@ -7473,73 +7473,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1243289169}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
---- !u!1 &1245627002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1245627003}
-  - component: {fileID: 1245627004}
-  - component: {fileID: 1245627005}
-  m_Layer: 0
-  m_Name: WaveGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1245627003
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1245627002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1636041552}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1245627004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1245627002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7015f9d99af2bd34bb43e29a313b6c47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveCount: 0
-  startEnemies: 4
-  enemiesAddedAfterWave: 2
-  timeBeforeNextWave: 3
-  timeBetweenSpawns: 2
-  spawnDecreser: 0.2
---- !u!114 &1245627005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1245627002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1292200aee233bf47a8887d33abbc143, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnPrefab:
-  - {fileID: 1956814288681088, guid: 1bd4234cde9a6b049b6ff9b695fb27b9, type: 2}
-  - {fileID: 1749226700940254, guid: f88670d02a0b94c4f9bdb6ef896057b5, type: 2}
-  - {fileID: 1110530145834310, guid: f8f4ff54b758e404a87a813cb6a12412, type: 2}
-  respawns: []
-  timeBetweenSpawns: 2
-  baseSpeed: 0
-  multiplier: 0.3
-  timeBetweenSpeedChange: 4
 --- !u!1 &1247552117
 GameObject:
   m_ObjectHideFlags: 0
@@ -9143,9 +9076,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1636041552}
+  - component: {fileID: 1636041555}
+  - component: {fileID: 1636041554}
+  - component: {fileID: 1636041553}
   m_Layer: 0
-  m_Name: SceneBehavior
-  m_TagString: Untagged
+  m_Name: GameState
+  m_TagString: gameState
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9159,12 +9095,65 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5010681, y: 0.3720522, z: -1.1917858}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1848721248}
-  - {fileID: 1245627003}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1636041553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636041551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de23028909a2b445abe8032a4a8db03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countText: {fileID: 435772441}
+  waveText: {fileID: 2026965770}
+--- !u!114 &1636041554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636041551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1292200aee233bf47a8887d33abbc143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPrefab:
+  - {fileID: 1956814288681088, guid: 1bd4234cde9a6b049b6ff9b695fb27b9, type: 2}
+  - {fileID: 1749226700940254, guid: f88670d02a0b94c4f9bdb6ef896057b5, type: 2}
+  - {fileID: 1110530145834310, guid: f8f4ff54b758e404a87a813cb6a12412, type: 2}
+  respawns: []
+  timeBetweenSpawns: 2
+  baseSpeed: 0
+  multiplier: 0.3
+  timeBetweenSpeedChange: 4
+--- !u!114 &1636041555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636041551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7015f9d99af2bd34bb43e29a313b6c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveCount: 0
+  startEnemies: 4
+  enemiesAddedAfterWave: 2
+  timeBeforeNextWave: 3
+  waveStart: 0
+  timeLapsedSpawns: 0
+  timeLapsedWaves: 0
+  timeBetweenSpawns: 2
+  spawnDecreser: 0.2
+  currentEnemiesSpawn: 0
+  enemiesLeft: 0
 --- !u!1 &1639194623
 GameObject:
   m_ObjectHideFlags: 0
@@ -10435,48 +10424,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845700806}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
---- !u!1 &1848721247
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1848721248}
-  - component: {fileID: 1848721249}
-  m_Layer: 0
-  m_Name: ScoreCounter
-  m_TagString: sceneBehavior
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1848721248
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1848721247}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1636041552}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1848721249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1848721247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de23028909a2b445abe8032a4a8db03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countText: {fileID: 435772441}
-  waveText: {fileID: 2026965770}
 --- !u!1 &1867598991
 GameObject:
   m_ObjectHideFlags: 0

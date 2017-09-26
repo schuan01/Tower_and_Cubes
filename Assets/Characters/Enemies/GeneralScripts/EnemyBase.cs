@@ -83,7 +83,6 @@ public class EnemyBase : MonoBehaviour
         enemyLife -= 1;
         if (enemyLife == 0)
         {
-
             DestroyEnemy();
         }
 
@@ -94,8 +93,9 @@ public class EnemyBase : MonoBehaviour
     {
 
         //StartCoroutine(SplitMesh(true));
-        GameObject go = GameObject.FindGameObjectWithTag("sceneBehavior");
+        GameObject go = GameObject.FindGameObjectWithTag("gameState");
         go.GetComponent<ScoreCounter>().ChangeScore();
+        go.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
         Destroy(gameObject);
 
 
@@ -111,6 +111,8 @@ public class EnemyBase : MonoBehaviour
 
         //StartCoroutine(SplitMesh(true));
         Destroy(gameObject);
+        GameObject go = GameObject.FindGameObjectWithTag("gameState");
+        go.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
 
 
     }
