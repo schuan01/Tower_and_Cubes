@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 //Spawn an enemy in a random Point each 2 seconds
 public class SpawnEnemy : MonoBehaviour
 {
@@ -9,8 +9,6 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject[] respawnPrefab;
     public GameObject[] respawns;
 
-    private float[] probability = new float[3];
-
     public float timeBetweenSpawns = 2.0f;
 
     public float baseSpeed = 0;
@@ -18,6 +16,8 @@ public class SpawnEnemy : MonoBehaviour
     public float multiplier = 0.3f;
 
     public float timeBetweenSpeedChange = 4;
+
+    public List<KeyValuePair<GameObject, float>> lstEnemies = new List<KeyValuePair<GameObject, float>>();
 
 
 
@@ -30,17 +30,23 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (g.tag.Contains("enemy_normal"))
             {
-                probability[cont] = 60;
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 50));
             }
 
             if (g.tag.Contains("enemy_explosive"))
             {
-                probability[cont] = 25;
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 20));
+            }
+
+            if (g.tag.Contains("enemy_explosive_static"))
+            {
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 15));
+
             }
 
             if (g.tag.Contains("enemy_giant"))
             {
-                probability[cont] = 15;
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 15));
             }
             cont++;
         }
@@ -54,7 +60,7 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
     }
 
@@ -63,35 +69,40 @@ public class SpawnEnemy : MonoBehaviour
         baseSpeed = baseSpeed + multiplier;
     }
 
-    int ChooseRandomByFloat()
+    
+
+    GameObject ChooseRandomEnemy()
     {
 
         float total = 0;
 
-        foreach (float elem in probability)
+        for (int i = 0; i < lstEnemies.Count; i++)
         {
-            total += elem;
+            total += lstEnemies[i].Value;
+            
         }
 
         float randomPoint = UnityEngine.Random.value * total;
 
 
-        for (int i = 0; i < probability.Length; i++)
+        for (int i = 0; i < lstEnemies.Count; i++)
         {
-            if (randomPoint < probability[i])
+            if (randomPoint < lstEnemies[i].Value)
             {
-
-                return i;
+                
+                return lstEnemies[i].Key;
 
             }
             else
             {
-                randomPoint -= probability[i];
+                randomPoint -= lstEnemies[i].Value;
             }
         }
 
-        return probability.Length - 1;
+        return lstEnemies[lstEnemies.Count - 1].Key;
     }
+
+
 
     public GameObject SpawnRandomEnemy()
     {
@@ -114,7 +125,9 @@ public class SpawnEnemy : MonoBehaviour
 
             Vector3 ground = new Vector3(respawns[randomIndexLocations].transform.position.x, 0, respawns[randomIndexLocations].transform.position.z);
 
-            GameObject go = Instantiate(respawnPrefab[ChooseRandomByFloat()], ground, Quaternion.identity);
+            //GameObject go = Instantiate(respawnPrefab[ChooseRandomByFloat()], ground, Quaternion.identity);
+            GameObject go = Instantiate(ChooseRandomEnemy(), ground, Quaternion.identity);
+            
             if (piso.tag.Contains("Off"))
             {
 
@@ -125,7 +138,7 @@ public class SpawnEnemy : MonoBehaviour
 
             return go;
 
-           
+
         }
 
         return null;

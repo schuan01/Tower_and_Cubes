@@ -38,8 +38,6 @@ public class WaveGenerator : MonoBehaviour
 
         timeLapsedSpawns += Time.deltaTime;
         timeLapsedWaves += Time.deltaTime;
-        // Debug.Log("Tiempo que va de Spawn: " + timeLapsedSpawns);
-        // Debug.Log("Tiempo que va de Wave: " + timeLapsedWaves);
 
 
         //Chequea el tiempo entre oleadas

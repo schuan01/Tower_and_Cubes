@@ -24,6 +24,8 @@ TagManager:
   - towerPoint
   - towerIgnore
   - gameState
+  - enemy_explosive_static
+  - enemy_explosive_static_off
   layers:
   - Default
   - TransparentFX

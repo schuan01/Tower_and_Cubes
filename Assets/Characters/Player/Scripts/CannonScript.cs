@@ -18,10 +18,14 @@ public class CannonScript : MonoBehaviour
 
     public GameObject bullet;
 
+    
+
 
 
     void Start()
     {
+       
+
         timePassed = 1.0f;//Para que pueda arrancar disparando}
 
         //check if our current system info equals a desktop
@@ -67,7 +71,13 @@ public class CannonScript : MonoBehaviour
                 {
                     if (Input.GetTouch(0).phase == TouchPhase.Began)
                     {
+                      
 
+                    }
+                   
+
+                    if (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled)
+                    {
                         timePassed = 0.0f;
 
                         Vector3 myTransform = transform.forward;
@@ -81,22 +91,12 @@ public class CannonScript : MonoBehaviour
                             GameObject piso = Hit.transform.gameObject;
                             if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
                             {
-                               Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
-                            transform.LookAt(targetPosition);
-                            //transform.LookAt(Hit.point);
-                            //transform.LookAt(ray.GetPoint(1000), Vector3.down);
-                            //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
-                            GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
-                            newProjectile.transform.LookAt(Hit.point);
-                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2500);
-
-                            Destroy(newProjectile, lifetime_bullet);
+                                Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
+                                ShootToLocation(targetPosition, Hit.point);
                             }
 
 
                         }
-
-
 
                     }
                 }
@@ -120,17 +120,10 @@ public class CannonScript : MonoBehaviour
                         GameObject piso = Hit.transform.gameObject;
                         if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
                         {
-                           
-                            Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
-                            transform.LookAt(targetPosition);
-                            //transform.LookAt(Hit.point);
-                            //transform.LookAt(ray.GetPoint(1000), Vector3.down);
-                            //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
-                            GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
-                            newProjectile.transform.LookAt(Hit.point);
-                            newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2500);
 
-                            Destroy(newProjectile, lifetime_bullet);
+                            Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
+                            ShootToLocation(targetPosition, Hit.point);
+
                         }
 
 
@@ -150,6 +143,19 @@ public class CannonScript : MonoBehaviour
 
 
 
+    }
+   
+    private void ShootToLocation(Vector3 targetPosition, Vector3 hitPoint)
+    {
+        transform.LookAt(targetPosition);
+        //transform.LookAt(Hit.point);
+        //transform.LookAt(ray.GetPoint(1000), Vector3.down);
+        //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
+        GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
+        newProjectile.transform.LookAt(hitPoint);
+        newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2500);
+
+        Destroy(newProjectile, lifetime_bullet);
     }
 
     public void changeCameraPositionLeft()
