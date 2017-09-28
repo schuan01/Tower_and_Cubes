@@ -7,25 +7,31 @@ public class TowerBase : MonoBehaviour
 {
     public int maxLife = 3;
 
-    public List<GameObject> towerParts = new List<GameObject>();
+    public GameObject player;
+
+    public GameObject gameStateObject;
     void Start()
     {
         if (transform.gameObject.tag == "towerAll")
         {
             foreach (Transform child in transform)
             {
-                if(child.tag != "towerIgnore")
+                TowerParts parts = child.GetComponent<TowerParts>();
+                if (parts != null)
                 {
-                    towerParts.Add(child.gameObject);
+                    if (!child.GetComponent<TowerParts>().isIgnore)
+                    {
+                        gameStateObject.GetComponent<TowerManager>().AddPartToList(child.gameObject);
+                    }
                 }
 
             }
         }
 
-        GameObject cannon = GameObject.FindGameObjectWithTag("Player");
+        GameObject cannon = player;
         if (cannon != null)
         {
-            towerParts.Add(cannon);
+            gameStateObject.GetComponent<TowerManager>().AddPartToList(cannon);
         }
     }
 

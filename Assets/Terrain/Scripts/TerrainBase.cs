@@ -7,6 +7,8 @@ public class TerrainBase : MonoBehaviour
     // Use this for initialization
     private GameObject[,] listOfTiles = new GameObject[11, 11];
 
+    public GameObject gameStateObject;
+
     void Start()
     {
         SetTiles();
@@ -33,6 +35,8 @@ public class TerrainBase : MonoBehaviour
             nameI = Convert.ToInt32(tokens[1]);
             nameJ = Convert.ToInt32(tokens[2]);
             listOfTiles[nameI, nameJ] = child.gameObject;
+            child.gameObject.GetComponent<TerrainTile>().gameStateObject = gameStateObject;
+            gameStateObject.GetComponent<TerrainManager>().AddTileToList(child.gameObject);
 
         }
     }
@@ -68,8 +72,6 @@ public class TerrainBase : MonoBehaviour
         return ret;
     }
 
-    public Material matBorder;
-    public Material matGreen;
     public void CheckBorders(GameObject sourceTile)
     {
         int[] positions = GetTileIndexByName(sourceTile);
@@ -94,19 +96,7 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-
-                if (val.tag.Contains("On"))
-                {
-                    val.tag = "terrainQuad_Border_On";
-                }
-                else if (val.tag.Contains("Off"))
-                {
-                    val.tag = "terrainQuad_Border_Off";
-                }
-
-
-
-
+                val.GetComponent<TerrainTile>().SetIsBorder(true);
             }
 
         }
@@ -120,17 +110,7 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-
-                if (val.tag.Contains("On"))
-                {
-                    val.tag = "terrainQuad_Border_On";
-                }
-                else if (val.tag.Contains("Off"))
-                {
-                    val.tag = "terrainQuad_Border_Off";
-                }
-
-
+                val.GetComponent<TerrainTile>().SetIsBorder(true);
             }
 
         }
@@ -144,17 +124,7 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-
-                if (val.tag.Contains("On"))
-                {
-                    val.tag = "terrainQuad_Border_On";
-                }
-                else if (val.tag.Contains("Off"))
-                {
-                    val.tag = "terrainQuad_Border_Off";
-                }
-
-
+                val.GetComponent<TerrainTile>().SetIsBorder(true);
             }
 
         }
@@ -168,15 +138,7 @@ public class TerrainBase : MonoBehaviour
             GameObject val = listOfTiles[posINueva, posJNueva];
             if (val != null)
             {
-                if (val.tag.Contains("On"))
-                {
-                    val.tag = "terrainQuad_Border_On";
-                }
-                else if (val.tag.Contains("Off"))
-                {
-                    val.tag = "terrainQuad_Border_Off";
-                }
-
+                val.GetComponent<TerrainTile>().SetIsBorder(true);
             }
 
         }
@@ -200,18 +162,7 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matBorder;
-                            g.GetComponent<Renderer>().materials = mats;
-
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Off";
-                            }
+                            g.GetComponent<TerrainTile>().SetEnable(false);
                         }
 
 
@@ -222,18 +173,10 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matGreen;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_On";
-                            }
+
+                            g.GetComponent<TerrainTile>().SetEnable(true);
+                            
                         }
 
                     }
@@ -256,18 +199,10 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matBorder;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Off";
-                            }
+
+                            g.GetComponent<TerrainTile>().SetEnable(false);
+                            
                         }
 
 
@@ -278,18 +213,10 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matGreen;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_On";
-                            }
+
+                            g.GetComponent<TerrainTile>().SetEnable(true);
+                            
                         }
 
                     }
@@ -312,18 +239,8 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matBorder;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Off";
-                            }
+                            g.GetComponent<TerrainTile>().SetEnable(false);
                         }
 
 
@@ -334,18 +251,8 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matGreen;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_On";
-                            }
+                            g.GetComponent<TerrainTile>().SetEnable(true);
                         }
 
                     }
@@ -368,18 +275,8 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matBorder;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_Off";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Off";
-                            }
+                            g.GetComponent<TerrainTile>().SetEnable(false);
                         }
 
 
@@ -390,18 +287,8 @@ public class TerrainBase : MonoBehaviour
                         GameObject g = listOfTiles[i, j];
                         if (g != null)
                         {
-                            Material[] mats = g.GetComponent<Renderer>().materials;
-                            mats[0] = matGreen;
-                            g.GetComponent<Renderer>().materials = mats;
 
-                            if (listOfTiles[i, j].tag.Contains("terrainQuad_Border"))
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_Border_On";
-                            }
-                            else
-                            {
-                                listOfTiles[i, j].tag = "terrainQuad_On";
-                            }
+                            g.GetComponent<TerrainTile>().SetEnable(true);
                         }
 
                     }

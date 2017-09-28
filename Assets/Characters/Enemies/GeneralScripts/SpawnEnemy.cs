@@ -7,7 +7,7 @@ public class SpawnEnemy : MonoBehaviour
 
     // Use this for initialization
     public GameObject[] respawnPrefab;
-    public GameObject[] respawns;
+    public List<GameObject> respawns;
 
     public float timeBetweenSpawns = 2.0f;
 
@@ -18,10 +18,6 @@ public class SpawnEnemy : MonoBehaviour
     public float timeBetweenSpeedChange = 4;
 
     public List<KeyValuePair<GameObject, float>> lstEnemies = new List<KeyValuePair<GameObject, float>>();
-
-
-
-
 
     void Start()
     {
@@ -51,7 +47,6 @@ public class SpawnEnemy : MonoBehaviour
             cont++;
         }
 
-        //InvokeRepeating("SpawnRandomEnemy", 2, timeBetweenSpawns);//A partir del segundo 2, cada 2 segundos
         InvokeRepeating("ChangeSpeedMultiplier", 5, timeBetweenSpeedChange);
     }
 
@@ -69,7 +64,7 @@ public class SpawnEnemy : MonoBehaviour
         baseSpeed = baseSpeed + multiplier;
     }
 
-    
+
 
     GameObject ChooseRandomEnemy()
     {
@@ -79,7 +74,7 @@ public class SpawnEnemy : MonoBehaviour
         for (int i = 0; i < lstEnemies.Count; i++)
         {
             total += lstEnemies[i].Value;
-            
+
         }
 
         float randomPoint = UnityEngine.Random.value * total;
@@ -89,7 +84,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (randomPoint < lstEnemies[i].Value)
             {
-                
+
                 return lstEnemies[i].Key;
 
             }
@@ -106,32 +101,32 @@ public class SpawnEnemy : MonoBehaviour
 
     public GameObject SpawnRandomEnemy()
     {
-        respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border_On");//Obtiene todos los puntos,bordes;
-        GameObject[] array2 = GameObject.FindGameObjectsWithTag("terrainQuad_Border_Off");//Obtiene todos los puntos,bordes;
-        int array1OriginalLength = respawns.Length;
-        Array.Resize<GameObject>(ref respawns, array1OriginalLength + array2.Length);
-        Array.Copy(array2, 0, respawns, array1OriginalLength, array2.Length);
+        //respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border_On");//Obtiene todos los puntos,bordes;
+        //GameObject[] array2 = GameObject.FindGameObjectsWithTag("terrainQuad_Border_Off");//Obtiene todos los puntos,bordes;
+        //int array1OriginalLength = respawns.Length;
+        //Array.Resize<GameObject>(ref respawns, array1OriginalLength + array2.Length);
+        //Array.Copy(array2, 0, respawns, array1OriginalLength, array2.Length);
 
-        //respawns = GameObject.FindGameObjectsWithTag("terrainQuad_Border_On");//Obtiene todos los puntos,bordes
+        respawns = gameObject.GetComponent<TerrainManager>().GetBorderTiles();
 
 
 
-        if (respawns.Length > 0)
+        if (respawns.Count > 0)
         {
-            int randomIndexLocations = UnityEngine.Random.Range(0, respawns.Length);
-            //int randomIndexPrefab = UnityEngine.Random.Range(0, respawnPrefab.Length);
+            int randomIndexLocations = UnityEngine.Random.Range(0, respawns.Count);
             GameObject piso = respawns[randomIndexLocations];
 
 
             Vector3 ground = new Vector3(respawns[randomIndexLocations].transform.position.x, 0, respawns[randomIndexLocations].transform.position.z);
 
-            //GameObject go = Instantiate(respawnPrefab[ChooseRandomByFloat()], ground, Quaternion.identity);
+
             GameObject go = Instantiate(ChooseRandomEnemy(), ground, Quaternion.identity);
-            
-            if (piso.tag.Contains("Off"))
+            go.GetComponent<EnemyBase>().gameStateObject = gameObject;
+
+            if (!piso.GetComponent<TerrainTile>().isActiveTile)
             {
 
-                go.tag = go.tag + "_off";
+                go.GetComponent<EnemyBase>().SetEnable(false);
             }
 
             //go.GetComponent<EnemyBase>().SetBaseVelocity(baseSpeed);

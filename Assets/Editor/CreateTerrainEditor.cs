@@ -34,19 +34,13 @@ public class MyTools
                     pisoCreado.name = "TerrainQuad_" + indexI + "_" + indexJ;
                     pisoCreado.transform.parent = parent.transform;
                     listOfTiles[indexI, indexJ] = pisoCreado;
-                    if (indexJ == 0 || indexJ == 10)
+                    if (indexJ == 0 || indexJ == 10 || indexI == 0 || indexI == 10)
                     {
-                        pisoCreado.tag = "terrainQuad_Border";
-                    }
-                    else
-                    {
-
+                        pisoCreado.GetComponent<TerrainTile>().SetIsBorderEditorMode(true);
                     }
 
-                    if (indexI == 0 || indexI == 10)
-                    {
-                        pisoCreado.tag = "terrainQuad_Border";
-                    }
+
+                    
 
                 }
             }

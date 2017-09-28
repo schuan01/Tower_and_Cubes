@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TowerParts : MonoBehaviour
 {
+    public GameObject gameStateObject;
+
+    public bool isIgnore = false;
 
     // Use this for initialization
     void Start()
@@ -17,14 +20,18 @@ public class TowerParts : MonoBehaviour
 
     }
 
+    public void SetIgnorePart(bool val)
+    {
+        isIgnore = val;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Contains("enemy"))
         {
             Destroy(other.gameObject);
             transform.parent.GetComponent<TowerBase>().DecreaseLife();
-            GameObject go = GameObject.FindGameObjectWithTag("gameState");
-            go.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
+            gameStateObject.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
 
         }
 

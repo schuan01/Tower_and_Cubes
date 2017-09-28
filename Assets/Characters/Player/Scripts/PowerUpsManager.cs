@@ -8,7 +8,9 @@ public class PowerUpsManager : MonoBehaviour
     public float timeToWaitPower = 10.0f;
     public float timeLapsed;
 
-	public Button explodeButton;
+    public Button explodeButton;
+
+    public GameObject gameStateObject;
 
 
 
@@ -16,40 +18,45 @@ public class PowerUpsManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       timeLapsed = 10;
+        timeLapsed = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-		 timeLapsed += Time.deltaTime;
-		 
+        timeLapsed += Time.deltaTime;
+
         if (timeLapsed >= timeToWaitPower && isPowerEnable == false)
         {
             isPowerEnable = true;
-            
+
         }
 
-		if(isPowerEnable && !explodeButton.interactable)
-		{
-			explodeButton.interactable = true;
-		}
+        if (isPowerEnable && !explodeButton.interactable)
+        {
+            explodeButton.interactable = true;
+        }
     }
 
     public void ExplodeEnemies()//Explota todo los enemigos de la vuelta
     {
-		
+
         if (isPowerEnable)
         {
-            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("enemy_normal");
-            foreach (GameObject g in enemigos)
+
+            foreach (GameObject g in gameStateObject.GetComponent<EnemiesManager>().lstEnemies)
             {
-                Destroy(g);
+                if (g != null)
+                {
+                    g.GetComponent<EnemyBase>().DestroyEnemy();
+                }
             }
 
             isPowerEnable = false;
-			explodeButton.interactable = false;
-			timeLapsed = 0;
+            explodeButton.interactable = false;
+            timeLapsed = 0;
         }
     }
+
+   
 }

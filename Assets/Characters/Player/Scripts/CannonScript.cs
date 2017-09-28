@@ -18,13 +18,15 @@ public class CannonScript : MonoBehaviour
 
     public GameObject bullet;
 
-    
+    public GameObject terrainAll;
+
+
 
 
 
     void Start()
     {
-       
+
 
         timePassed = 1.0f;//Para que pueda arrancar disparando}
 
@@ -71,10 +73,10 @@ public class CannonScript : MonoBehaviour
                 {
                     if (Input.GetTouch(0).phase == TouchPhase.Began)
                     {
-                      
+
 
                     }
-                   
+
 
                     if (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled)
                     {
@@ -89,7 +91,7 @@ public class CannonScript : MonoBehaviour
                         {
 
                             GameObject piso = Hit.transform.gameObject;
-                            if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
+                            if (((piso != null) && (piso.tag.Contains("terrainQuad") && (piso.GetComponent<TerrainTile>().isActiveTile)) || (piso.tag.Contains("enemy") && piso.GetComponent<EnemyBase>().isEnemyActive)))
                             {
                                 Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
                                 ShootToLocation(targetPosition, Hit.point);
@@ -118,7 +120,7 @@ public class CannonScript : MonoBehaviour
                     {
                         //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
                         GameObject piso = Hit.transform.gameObject;
-                        if ((piso != null) && (piso.tag.Contains("terrainQuad_On") || piso.tag.Contains("terrainQuad_Border_On")) || (piso.tag.Contains("enemy") && !piso.tag.Contains("off")))
+                        if (((piso != null) && (piso.tag.Contains("terrainQuad") && (piso.GetComponent<TerrainTile>().isActiveTile) || (piso.tag.Contains("enemy") && piso.GetComponent<EnemyBase>().isEnemyActive))))
                         {
 
                             Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
@@ -136,15 +138,12 @@ public class CannonScript : MonoBehaviour
         }
 
 
-        /*if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            
-        }*/
+       
 
 
 
     }
-   
+
     private void ShootToLocation(Vector3 targetPosition, Vector3 hitPoint)
     {
         transform.LookAt(targetPosition);
@@ -175,8 +174,7 @@ public class CannonScript : MonoBehaviour
             Camera.main.transform.Rotate(0, 90, 0, Space.World);
 
             //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
-            GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
-            terreno.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
+            terrainAll.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
 
 
 
@@ -200,8 +198,7 @@ public class CannonScript : MonoBehaviour
             Camera.main.transform.Rotate(0, -90, 0, Space.World);
 
             //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
-            GameObject terreno = GameObject.FindGameObjectWithTag("terrainAll");
-            terreno.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
+            terrainAll.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
 
 
 

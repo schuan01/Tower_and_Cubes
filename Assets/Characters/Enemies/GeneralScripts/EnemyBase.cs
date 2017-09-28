@@ -16,6 +16,10 @@ public class EnemyBase : MonoBehaviour
     private bool isExploding = false;
     private GameObject piso = null;
 
+    public GameObject gameStateObject;
+
+    public bool isEnemyActive = true;
+
     
 
     
@@ -35,7 +39,9 @@ public class EnemyBase : MonoBehaviour
             enemyLife = 3;
         }
 
-        InvokeRepeating("ChangeTagByTile", 2, timeBetweenCheck);//A partir del segundo 2, cada 0.5 segundos
+        gameStateObject.GetComponent<EnemiesManager>().AddEnemyToList(gameObject);
+
+        InvokeRepeating("ChangeStateByTile", 2, timeBetweenCheck);//A partir del segundo 2, cada 0.5 segundos
         
     }
 
@@ -55,6 +61,13 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    public void SetEnable(bool val)
+    {
+        isEnemyActive = val;
+        gameStateObject.GetComponent<EnemiesManager>().UpdateEnemyFromList(gameObject);
+    }
+
+
     public void StopMovement()
     {
         GetComponent<NavMeshAgent>().speed = 0;
@@ -64,19 +77,19 @@ public class EnemyBase : MonoBehaviour
     {
          GetComponent<NavMeshAgent>().speed = GetComponent<NavMeshAgent>().speed + multiplier;
     }
-    private void ChangeTagByTile()
+    private void ChangeStateByTile()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
         {
             piso = hit.transform.gameObject;
-            if (piso != null && piso.tag.Contains("Off") && !gameObject.tag.Contains("off"))
+            if (piso != null && !piso.GetComponent<TerrainTile>().isActiveTile && isEnemyActive)
             {
-                gameObject.tag = gameObject.tag + "_off";
+                SetEnable(false);
             }
-            else if (piso != null && piso.tag.Contains("On"))
+            else if (piso != null && piso.GetComponent<TerrainTile>().isActiveTile)
             {
-                gameObject.tag = gameObject.tag.Replace("_off", "");//Sea el On o el off
+                SetEnable(true);
             }
         }
     }
@@ -92,13 +105,10 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    void DestroyEnemy()
+    public void DestroyEnemy()
     {
 
-        //StartCoroutine(SplitMesh(true));
-        GameObject go = GameObject.FindGameObjectWithTag("gameState");
-        go.GetComponent<ScoreCounter>().ChangeScore();
-        go.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
+        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemy(gameObject);
         Destroy(gameObject);
 
 
@@ -108,14 +118,12 @@ public class EnemyBase : MonoBehaviour
     {
         if (gameObject.tag.Contains("enemy_explosive") && isExploding == true)
         {
-            //isExploding = false;
             DestroyCurrentTile();
         }
 
-        //StartCoroutine(SplitMesh(true));
+        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemyWithoutScore(gameObject);
         Destroy(gameObject);
-        GameObject go = GameObject.FindGameObjectWithTag("gameState");
-        go.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
+        
 
 
     }

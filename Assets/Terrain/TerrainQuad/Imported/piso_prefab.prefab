@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33261245566140454}
   - component: {fileID: 23569403832539362}
   - component: {fileID: 65747924145974430}
+  - component: {fileID: 114142066095793212}
   m_Layer: 0
   m_Name: piso_prefab
-  m_TagString: Untagged
+  m_TagString: terrainQuad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +95,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.86, y: 0.41, z: 5.85}
   m_Center: {x: -0.000000059604645, y: 0.1, z: 0.00000011920927}
+--- !u!114 &114142066095793212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510338301351376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ff60f11e9ac2541826a99cb92fafad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActiveTile: 1
+  isBorder: 0
+  matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
+  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  gameStateObject: {fileID: 0}
