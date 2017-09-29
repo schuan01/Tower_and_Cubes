@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 33307401175785648}
   - component: {fileID: 23369607519216890}
   - component: {fileID: 65167663425496808}
-  - component: {fileID: 114343900393239502}
   - component: {fileID: 114791622441242370}
   - component: {fileID: 195499812792813382}
-  m_Layer: 2
+  - component: {fileID: 114122298508874418}
+  m_Layer: 0
   m_Name: enemy_giant_prefab
   m_TagString: enemy_giant
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.024472265, y: 0.02, z: 0.02408344}
   m_Center: {x: -0.000005840324, y: 0, z: -0.0003248257}
---- !u!114 &114343900393239502
+--- !u!114 &114122298508874418
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,10 +108,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1749226700940254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec03d3bf1972e024aa271e07b4a38052, type: 3}
+  m_Script: {fileID: 11500000, guid: e409c72a9ee503f419832b274460694e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLife: 1
   timeBeforeExplode: 3
+  gameStateObject: {fileID: 0}
+  isEnemyActive: 1
 --- !u!114 &114791622441242370
 MonoBehaviour:
   m_ObjectHideFlags: 1

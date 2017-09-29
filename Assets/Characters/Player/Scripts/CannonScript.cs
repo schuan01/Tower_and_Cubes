@@ -88,6 +88,7 @@ public class CannonScript : MonoBehaviour
                         RaycastHit Hit;
                         //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
                         if (Physics.Raycast(ray, out Hit, 1000, layerMask))
+                        //if (Physics.Raycast(transform.position, transform.forward, out Hit, Mathf.Infinity, layerMask))
                         {
 
                             GameObject piso = Hit.transform.gameObject;
@@ -115,19 +116,18 @@ public class CannonScript : MonoBehaviour
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit Hit;
                     //Vector3 direction = transform.TransformDirection(Vector3.forward);
-                    //if(Physics.SphereCast(ray.origin, 1, ray.direction, out Hit))
+                    //if (Physics.Raycast(ray.origin, ray.direction, out Hit, Mathf.Infinity, layerMask))
                     if (Physics.Raycast(ray, out Hit, 1000, layerMask))
                     {
                         //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
                         GameObject piso = Hit.transform.gameObject;
                         if (((piso != null) && (piso.tag.Contains("terrainQuad") && (piso.GetComponent<TerrainTile>().isActiveTile) || (piso.tag.Contains("enemy") && piso.GetComponent<EnemyBase>().isEnemyActive))))
                         {
-
+                            
                             Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
                             ShootToLocation(targetPosition, Hit.point);
 
                         }
-
 
                     }
 
@@ -138,7 +138,7 @@ public class CannonScript : MonoBehaviour
         }
 
 
-       
+
 
 
 

@@ -20,9 +20,10 @@ public class BulletScript : MonoBehaviour {
         
         if (collision.gameObject.tag.Contains("enemy"))//Mientras sea un enemigo
         {
+
 			collision.gameObject.GetComponent<EnemyBase>().DecreseLife();
            
-			Destroy(gameObject);//Destruid bala
+			Destroy(gameObject);//Destruir bala
         }
 
 		

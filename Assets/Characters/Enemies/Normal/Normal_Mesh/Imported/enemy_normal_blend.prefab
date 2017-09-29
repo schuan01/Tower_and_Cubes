@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4697215651208344}
   - component: {fileID: 33700088670006528}
   - component: {fileID: 23615347212359840}
-  - component: {fileID: 114104824538640756}
   - component: {fileID: 114699397566023566}
   - component: {fileID: 195666555780244384}
   - component: {fileID: 65865382179474966}
-  m_Layer: 2
+  - component: {fileID: 114915301835857096}
+  m_Layer: 0
   m_Name: enemy_normal_blend
   m_TagString: enemy_normal
   m_Icon: {fileID: 0}
@@ -99,18 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020011691, y: 0.020000005, z: 0.020000013}
   m_Center: {x: -0.000005840324, y: 0, z: 4.656614e-10}
---- !u!114 &114104824538640756
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1956814288681088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec03d3bf1972e024aa271e07b4a38052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeExplode: 3
 --- !u!114 &114699397566023566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +111,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1300629237234666, guid: 86eb489e39dbed343a2a0ff24f603c8e, type: 2}
+--- !u!114 &114915301835857096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956814288681088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bbc4bcc1b91cc4bba147d716816b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLife: 1
+  timeBeforeExplode: 3
+  gameStateObject: {fileID: 0}
+  isEnemyActive: 1
 --- !u!195 &195666555780244384
 NavMeshAgent:
   m_ObjectHideFlags: 1

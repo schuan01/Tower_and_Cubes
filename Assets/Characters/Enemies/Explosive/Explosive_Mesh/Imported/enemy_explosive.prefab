@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 23389486950588282}
   - component: {fileID: 195903988331477020}
   - component: {fileID: 114992786034844512}
-  - component: {fileID: 114514601111389320}
   - component: {fileID: 65852940756033064}
-  m_Layer: 2
+  - component: {fileID: 114998673817325112}
+  m_Layer: 0
   m_Name: enemy_explosive
   m_TagString: enemy_explosive
   m_Icon: {fileID: 0}
@@ -100,18 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020011691, y: 0.02, z: 0.02326151}
   m_Center: {x: -0.000005840324, y: 0, z: -0.001630751}
---- !u!114 &114514601111389320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1110530145834310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec03d3bf1972e024aa271e07b4a38052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeExplode: 3
 --- !u!114 &114992786034844512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,6 +112,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1300629237234666, guid: 86eb489e39dbed343a2a0ff24f603c8e, type: 2}
+--- !u!114 &114998673817325112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110530145834310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c147e5c3a186ee44af13494703e23bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLife: 1
+  timeBeforeExplode: 3
+  gameStateObject: {fileID: 0}
+  isEnemyActive: 1
 --- !u!195 &195903988331477020
 NavMeshAgent:
   m_ObjectHideFlags: 1
