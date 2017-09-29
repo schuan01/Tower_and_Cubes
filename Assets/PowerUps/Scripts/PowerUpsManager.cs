@@ -9,6 +9,7 @@ public class PowerUpsManager : MonoBehaviour
     
     void Start()
     {
+        
 
         gameObject.AddComponent<ExplodePowerUp>();
         gameObject.GetComponent<ExplodePowerUp>().executeButton = explodeButton;
@@ -22,7 +23,7 @@ public class PowerUpsManager : MonoBehaviour
 
     public void ExplodeEnemies()//Explota todo los enemigos de la vuelta
     {
-        Debug.Log("ejecuto ExplodeEnemies()");
+        
         if (GetComponent<ExplodePowerUp>().coinCost <= GetComponent<CoinsManager>().globalCoins)
         {
             GetComponent<CoinsManager>().DecreseCoins(GetComponent<ExplodePowerUp>().coinCost);

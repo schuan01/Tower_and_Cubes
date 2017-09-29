@@ -39,6 +39,7 @@ public class EnemiesManager : MonoBehaviour
     {
         gameObject.GetComponent<ScoreCounter>().ChangeScore();
         gameObject.GetComponent<WaveGenerator>().ChangeEnemiesLeft();
+        gameObject.GetComponent<CoinsManager>().IncreseCoins();
         RemoveEnemyFromList(gameObject);
     }
 

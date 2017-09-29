@@ -1,6 +1,4 @@
-﻿
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
@@ -91,6 +89,15 @@ public class EnemyBase : MonoBehaviour
 
 
     }
+
+    public virtual void DestroyEnemyWithoutScore()
+    {
+        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemyWithoutScore(gameObject);
+        Destroy(gameObject);
+
+
+    }
+    
 
 
 

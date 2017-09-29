@@ -9,7 +9,7 @@ public class ExplodePowerUp : BasePowerUp {
     public bool isPowerEnable = false;
 	void Start () {
 		timeLapsed = 10;
-        coinCost = 10;
+        coinCost = 100;
 		
 	}
 	
@@ -38,7 +38,7 @@ public class ExplodePowerUp : BasePowerUp {
             {
                 if (g != null)
                 {
-                    g.GetComponent<EnemyBase>().DestroyEnemy();
+                    g.GetComponent<EnemyBase>().DestroyEnemyWithoutScore();
                 }
             }
 

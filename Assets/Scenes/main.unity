@@ -201,6 +201,7 @@ RectTransform:
   - {fileID: 2026965769}
   - {fileID: 843510662}
   - {fileID: 661064506}
+  - {fileID: 1990250644}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4468,8 +4469,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1634763370}
-          m_MethodName: changeCameraPositionLeft
+        - m_Target: {fileID: 1636041560}
+          m_MethodName: Pause
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10885,6 +10886,8 @@ GameObject:
   - component: {fileID: 1636041557}
   - component: {fileID: 1636041556}
   - component: {fileID: 1636041559}
+  - component: {fileID: 1636041560}
+  - component: {fileID: 1636041561}
   m_Layer: 0
   m_Name: GameState
   m_TagString: gameState
@@ -10918,6 +10921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countText: {fileID: 435772441}
   waveText: {fileID: 2026965770}
+  coinText: {fileID: 1990250645}
 --- !u!114 &1636041554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11009,6 +11013,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodeButton: {fileID: 843510663}
+--- !u!114 &1636041560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636041551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab1dbb4a1d8cad4a8b4c9d316782603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPaused: 0
+--- !u!114 &1636041561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636041551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9df92e877b6b3640a07b0a95f036ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalCoins: 0
 --- !u!1 &1647801928
 GameObject:
   m_ObjectHideFlags: 0
@@ -13858,6 +13886,80 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1977635883}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1 &1990250643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1990250644}
+  - component: {fileID: 1990250646}
+  - component: {fileID: 1990250645}
+  m_Layer: 5
+  m_Name: txtCoins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1990250644
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990250643}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999967, y: 0.9999967, z: 0.9999967}
+  m_Children: []
+  m_Father: {fileID: 18943872}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -371.01, y: -31.8}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1990250645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990250643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1990250646
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990250643}
 --- !u!1 &2002729551
 GameObject:
   m_ObjectHideFlags: 0

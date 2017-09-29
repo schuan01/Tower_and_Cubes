@@ -12,6 +12,8 @@ public class CoinsManager : MonoBehaviour {
 			globalCoins = 100;
 			SaveLoad.SaveCoins(globalCoins);
 		}
+
+		Debug.Log("Monedas: " + globalCoins);
 		
 	}
 	
@@ -23,6 +25,7 @@ public class CoinsManager : MonoBehaviour {
 	public void IncreseCoins()
 	{
 		globalCoins += 1;
+		GetComponent<ScoreCounter>().ChangeCoins();
 	}
 
 	public void DecreseCoins(int value)
