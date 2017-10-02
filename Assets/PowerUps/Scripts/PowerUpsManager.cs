@@ -10,9 +10,12 @@ public class PowerUpsManager : MonoBehaviour
     void Start()
     {
         
+        
 
         gameObject.AddComponent<ExplodePowerUp>();
         gameObject.GetComponent<ExplodePowerUp>().executeButton = explodeButton;
+
+        
     }
 
     

@@ -1,37 +1,42 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 
-public class ExplodePowerUp : BasePowerUp {
+public class ExplodePowerUp : BasePowerUp
+{
 
-	public float timeToWaitPower = 10.0f;
+    public float timeToWaitPower = 10.0f;
     public float timeLapsed;
 
     public bool isPowerEnable = false;
-	void Start () {
-		timeLapsed = 10;
-        coinCost = 100;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		timeLapsed += Time.deltaTime;
+    void Start()
+    {
+        timeLapsed = 10;
+        coinCost = 40;
 
-        if (timeLapsed >= timeToWaitPower && isPowerEnable == false)
+        if (coinCost > GetComponent<CoinsManager>().globalCoins)
+        {
+
+            executeButton.interactable = false;
+            isPowerEnable = false;
+        }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        timeLapsed += Time.deltaTime;
+
+        if (timeLapsed >= timeToWaitPower && coinCost <= GetComponent<CoinsManager>().globalCoins)
         {
             isPowerEnable = true;
-
-        }
-
-        if (isPowerEnable && !executeButton.interactable)
-        {
             executeButton.interactable = true;
         }
-	}
+    }
 
-	public void Execute()
-	{
-		if (isPowerEnable)
+    public void Execute()
+    {
+        if (isPowerEnable)
         {
 
             foreach (GameObject g in gameObject.GetComponent<EnemiesManager>().lstEnemies)
@@ -46,5 +51,5 @@ public class ExplodePowerUp : BasePowerUp {
             executeButton.interactable = false;
             timeLapsed = 0;
         }
-	}
+    }
 }

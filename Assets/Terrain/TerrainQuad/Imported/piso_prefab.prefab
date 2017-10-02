@@ -109,5 +109,5 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}

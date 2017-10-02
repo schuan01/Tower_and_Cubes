@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &30565364
 BoxCollider:
@@ -362,7 +362,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &35120691
 BoxCollider:
@@ -462,7 +462,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &39021212
 BoxCollider:
@@ -562,7 +562,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &49512666
 BoxCollider:
@@ -681,7 +681,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &60609361
 BoxCollider:
@@ -781,7 +781,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &63030338
 BoxCollider:
@@ -909,6 +909,88 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 97533875}
+--- !u!1 &111381182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 111381186}
+  - component: {fileID: 111381185}
+  - component: {fileID: 111381184}
+  - component: {fileID: 111381183}
+  m_Layer: 0
+  m_Name: Sphere (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &111381183
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111381182}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9458a16c5106485419c8a3bb7da8e552, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &111381184
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111381182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &111381185
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111381182}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &111381186
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111381182}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2517777, y: 0, z: -0.91555333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1601389340}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &115688102
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +1037,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &115688105
 BoxCollider:
@@ -1055,7 +1137,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &128639720
 BoxCollider:
@@ -1155,7 +1237,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &138783553
 BoxCollider:
@@ -1255,7 +1337,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &140435005
 BoxCollider:
@@ -1355,7 +1437,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &141409185
 BoxCollider:
@@ -1485,6 +1567,64 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 150394031}
+--- !u!1001 &164358732
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1998733640}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_Name
+      value: tree (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &173818804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,7 +1671,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &173818807
 BoxCollider:
@@ -1631,7 +1771,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &209100848
 BoxCollider:
@@ -1731,7 +1871,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &213831619
 BoxCollider:
@@ -1831,7 +1971,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &225054610
 BoxCollider:
@@ -1885,6 +2025,88 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225054607}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1 &228339803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 228339807}
+  - component: {fileID: 228339806}
+  - component: {fileID: 228339805}
+  - component: {fileID: 228339804}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &228339804
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228339803}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9458a16c5106485419c8a3bb7da8e552, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &228339805
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228339803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &228339806
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228339803}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &228339807
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228339803}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1601389340}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &240951494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +2185,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &247677727
 BoxCollider:
@@ -2063,7 +2285,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &260196090
 BoxCollider:
@@ -2117,6 +2339,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 260196087}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!4 &297368070 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_PrefabInternal: {fileID: 164358732}
 --- !u!1 &306717842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,7 +2531,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &315194987
 BoxCollider:
@@ -2479,7 +2705,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &336331569
 BoxCollider:
@@ -2579,7 +2805,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &339184864
 BoxCollider:
@@ -2679,7 +2905,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &359420669
 BoxCollider:
@@ -2779,7 +3005,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &359909307
 BoxCollider:
@@ -2879,7 +3105,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &375588042
 BoxCollider:
@@ -2979,7 +3205,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &384201986
 BoxCollider:
@@ -3079,7 +3305,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &384748736
 BoxCollider:
@@ -3179,7 +3405,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &405865813
 BoxCollider:
@@ -3279,7 +3505,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &418490091
 BoxCollider:
@@ -3419,9 +3645,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -181.9, y: -31.8}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.99999976}
 --- !u!114 &435772441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3507,7 +3733,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &435910375
 BoxCollider:
@@ -3607,7 +3833,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &444008678
 BoxCollider:
@@ -3761,7 +3987,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &467011874
 BoxCollider:
@@ -3861,7 +4087,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &488387830
 BoxCollider:
@@ -3961,7 +4187,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &517793227
 BoxCollider:
@@ -4061,7 +4287,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &546824743
 BoxCollider:
@@ -4115,6 +4341,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 546824740}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1001 &616256927
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1998733640}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.63367254
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0040000067
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.010958083
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_Name
+      value: tree (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &623531522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,7 +4445,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &623531525
 BoxCollider:
@@ -4261,7 +4545,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &626851315
 BoxCollider:
@@ -4361,7 +4645,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &651252249
 BoxCollider:
@@ -4450,9 +4734,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -30}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -0.0000003017485, y: 1.0000008}
 --- !u!114 &661064507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4468,18 +4752,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1636041560}
-          m_MethodName: Pause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -4521,7 +4794,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 661064509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636041560}
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &661064509
@@ -4603,7 +4887,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &661530121
 BoxCollider:
@@ -4703,7 +4987,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &676313187
 BoxCollider:
@@ -4803,7 +5087,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &681604309
 BoxCollider:
@@ -4903,7 +5187,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &708636151
 BoxCollider:
@@ -5003,7 +5287,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &716898405
 BoxCollider:
@@ -5103,7 +5387,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &739041032
 BoxCollider:
@@ -5203,7 +5487,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &749029075
 BoxCollider:
@@ -5303,7 +5587,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &755953954
 BoxCollider:
@@ -5403,7 +5687,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &768572890
 BoxCollider:
@@ -5503,7 +5787,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &771248131
 BoxCollider:
@@ -5787,7 +6071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100.6, y: 32.8}
+  m_AnchoredPosition: {x: -100.6001, y: 32.8}
   m_SizeDelta: {x: 109.3, y: 44.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843510663
@@ -5921,7 +6205,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &863088407
 BoxCollider:
@@ -5975,6 +6259,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863088404}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!4 &864304028 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_PrefabInternal: {fileID: 1028792111}
 --- !u!1 &873362061
 GameObject:
   m_ObjectHideFlags: 0
@@ -6021,7 +6309,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &873362064
 BoxCollider:
@@ -6121,7 +6409,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &904987688
 BoxCollider:
@@ -6447,7 +6735,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &910627116
 BoxCollider:
@@ -6547,7 +6835,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &934125893
 BoxCollider:
@@ -6675,7 +6963,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &951871523
 BoxCollider:
@@ -6775,7 +7063,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &976546311
 BoxCollider:
@@ -6829,6 +7117,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976546308}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!4 &979962849 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_PrefabInternal: {fileID: 616256927}
 --- !u!1001 &981133574
 Prefab:
   m_ObjectHideFlags: 0
@@ -6877,7 +7169,7 @@ Prefab:
         type: 2}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 1471621142008018, guid: 0d01ec9240ff1064a9501170c9aa6af0,
+      objectReference: {fileID: 1485335125338560, guid: 9f4622e15ce6b9649b8374eef44c3ab3,
         type: 2}
     - target: {fileID: 4889162251453996, guid: 9a2b84790618c944b9f23506725d77bf, type: 2}
       propertyPath: m_LocalScale.x
@@ -6954,7 +7246,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &982139301
 BoxCollider:
@@ -7054,7 +7346,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1024033725
 BoxCollider:
@@ -7108,6 +7400,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1024033722}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1001 &1028792111
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1998733640}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.63367254
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0040000067
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.012096934
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_Name
+      value: tree (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &1049403954
 GameObject:
   m_ObjectHideFlags: 0
@@ -7154,7 +7504,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1049403957
 BoxCollider:
@@ -7254,7 +7604,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1109810564
 BoxCollider:
@@ -7308,6 +7658,88 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1109810561}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1 &1134120042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1134120046}
+  - component: {fileID: 1134120045}
+  - component: {fileID: 1134120044}
+  - component: {fileID: 1134120043}
+  m_Layer: 0
+  m_Name: Sphere (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1134120043
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134120042}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9458a16c5106485419c8a3bb7da8e552, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &1134120044
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134120042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1134120045
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134120042}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1134120046
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134120042}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.81983244, y: 0, z: -0.64920866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1601389340}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150588089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7354,7 +7786,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1150588092
 BoxCollider:
@@ -7482,7 +7914,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1179088443
 BoxCollider:
@@ -7582,7 +8014,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1224873443
 BoxCollider:
@@ -7682,7 +8114,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1230916139
 BoxCollider:
@@ -7856,7 +8288,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1269478225
 BoxCollider:
@@ -7956,7 +8388,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1285579156
 BoxCollider:
@@ -8010,6 +8442,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285579153}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!4 &1299115280 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_PrefabInternal: {fileID: 1448162716}
 --- !u!1 &1306872615
 GameObject:
   m_ObjectHideFlags: 0
@@ -8056,7 +8492,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1306872618
 BoxCollider:
@@ -8156,7 +8592,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1309917680
 BoxCollider:
@@ -8256,7 +8692,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1311908252
 BoxCollider:
@@ -8356,7 +8792,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1312856073
 BoxCollider:
@@ -8521,7 +8957,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1326222106
 BoxCollider:
@@ -8649,7 +9085,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1362168304
 BoxCollider:
@@ -8749,7 +9185,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1364838094
 BoxCollider:
@@ -8849,7 +9285,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1371394142
 BoxCollider:
@@ -8949,7 +9385,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1378081221
 BoxCollider:
@@ -9049,7 +9485,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1395074969
 BoxCollider:
@@ -9149,7 +9585,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1396847611
 BoxCollider:
@@ -9303,7 +9739,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1424840288
 BoxCollider:
@@ -9357,6 +9793,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424840285}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1001 &1448162716
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1998733640}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26667264
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01175807
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_Name
+      value: tree (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &1453675439
 GameObject:
   m_ObjectHideFlags: 0
@@ -9403,7 +9897,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1453675442
 BoxCollider:
@@ -9503,7 +9997,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1467311972
 BoxCollider:
@@ -9603,7 +10097,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1477585799
 BoxCollider:
@@ -9703,7 +10197,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1483884368
 BoxCollider:
@@ -9803,7 +10297,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1485271090
 BoxCollider:
@@ -9903,7 +10397,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1529424447
 BoxCollider:
@@ -10003,7 +10497,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1538955608
 BoxCollider:
@@ -10103,7 +10597,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1544260341
 BoxCollider:
@@ -10203,7 +10697,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1549250842
 BoxCollider:
@@ -10303,7 +10797,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1551699892
 BoxCollider:
@@ -10403,7 +10897,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1554653614
 BoxCollider:
@@ -10503,7 +10997,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1557687449
 BoxCollider:
@@ -10647,6 +11141,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1596214676 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_PrefabInternal: {fileID: 2077746862}
 --- !u!1 &1597815124
 GameObject:
   m_ObjectHideFlags: 0
@@ -10737,6 +11235,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45.000004, y: -90.00001, z: 0}
+--- !u!1 &1601389339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1601389340}
+  m_Layer: 0
+  m_Name: decoracion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601389340
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601389339}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3140001, y: 0.531, z: -0.89799976}
+  m_LocalScale: {x: 0.48058456, y: 0.48058468, z: 0.48058468}
+  m_Children:
+  - {fileID: 111381186}
+  - {fileID: 1134120046}
+  - {fileID: 1926960488}
+  - {fileID: 228339807}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617855117
 GameObject:
   m_ObjectHideFlags: 0
@@ -10817,7 +11347,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1635979815
 BoxCollider:
@@ -11083,7 +11613,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1647801931
 BoxCollider:
@@ -11345,7 +11875,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1661941459
 BoxCollider:
@@ -11445,7 +11975,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1675082047
 BoxCollider:
@@ -11545,7 +12075,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1707693272
 BoxCollider:
@@ -11645,7 +12175,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1713843577
 BoxCollider:
@@ -11745,7 +12275,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1720957567
 BoxCollider:
@@ -11845,7 +12375,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1721621691
 BoxCollider:
@@ -11945,7 +12475,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1725045536
 BoxCollider:
@@ -12045,7 +12575,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1726676377
 BoxCollider:
@@ -12150,7 +12680,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1729863536
 BoxCollider:
@@ -12250,7 +12780,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1737500007
 BoxCollider:
@@ -12350,7 +12880,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1749549614
 BoxCollider:
@@ -12478,7 +13008,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1790751040
 BoxCollider:
@@ -12578,7 +13108,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1792056116
 BoxCollider:
@@ -12678,7 +13208,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1797451870
 BoxCollider:
@@ -12778,7 +13308,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1802333286
 BoxCollider:
@@ -12878,7 +13408,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1812065441
 BoxCollider:
@@ -12932,6 +13462,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812065438}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!4 &1814435235 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_PrefabInternal: {fileID: 1900400666}
 --- !u!1 &1820460066
 GameObject:
   m_ObjectHideFlags: 0
@@ -12978,7 +13512,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1820460069
 BoxCollider:
@@ -13078,7 +13612,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1823823576
 BoxCollider:
@@ -13178,7 +13712,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1833190022
 BoxCollider:
@@ -13278,7 +13812,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1841638217
 BoxCollider:
@@ -13434,7 +13968,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1894130314
 BoxCollider:
@@ -13488,6 +14022,146 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1894130311}
   m_Mesh: {fileID: 4300000, guid: 7670b92acb1f78a44971e8368905cf0b, type: 3}
+--- !u!1001 &1900400666
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1998733640}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.367
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0008
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_Name
+      value: tree (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1 &1926960484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1926960488}
+  - component: {fileID: 1926960487}
+  - component: {fileID: 1926960486}
+  - component: {fileID: 1926960485}
+  m_Layer: 0
+  m_Name: Sphere (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1926960485
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926960484}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9458a16c5106485419c8a3bb7da8e552, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &1926960486
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926960484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1926960487
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926960484}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1926960488
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926960484}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.093, y: 0.81151164, z: -0.65129054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1601389340}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934328909
 GameObject:
   m_ObjectHideFlags: 0
@@ -13534,7 +14208,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1934328912
 BoxCollider:
@@ -13732,7 +14406,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1965813371
 BoxCollider:
@@ -13832,7 +14506,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &1977635886
 BoxCollider:
@@ -13916,11 +14590,11 @@ RectTransform:
   m_Father: {fileID: 18943872}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -371.01, y: -31.8}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -0.000000055879354, y: 0.9999995}
 --- !u!114 &1990250645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13960,6 +14634,40 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1990250643}
+--- !u!1 &1998733639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1998733640}
+  m_Layer: 0
+  m_Name: trees
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998733640
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998733639}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.49, y: 0.74, z: -9.12}
+  m_LocalScale: {x: 3.1124299, y: 3.1124303, z: 43.37448}
+  m_Children:
+  - {fileID: 297368070}
+  - {fileID: 1299115280}
+  - {fileID: 1596214676}
+  - {fileID: 979962849}
+  - {fileID: 1814435235}
+  - {fileID: 864304028}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002729551
 GameObject:
   m_ObjectHideFlags: 0
@@ -14006,7 +14714,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2002729554
 BoxCollider:
@@ -14106,7 +14814,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2021520131
 BoxCollider:
@@ -14190,11 +14898,11 @@ RectTransform:
   m_Father: {fileID: 18943872}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 175, y: -31.8}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1.0000002, y: 1.0000001}
 --- !u!114 &2026965770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14234,6 +14942,60 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2026965768}
+--- !u!1001 &2077746862
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1998733640}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02305503
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8d111ffedb5031640bb7babcc2b465a9, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &2080550737
 GameObject:
   m_ObjectHideFlags: 0
@@ -14280,7 +15042,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2080550740
 BoxCollider:
@@ -14380,7 +15142,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2089671133
 BoxCollider:
@@ -14480,7 +15242,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2095168942
 BoxCollider:
@@ -14580,7 +15342,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2105099553
 BoxCollider:
@@ -14680,7 +15442,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 0
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2120788252
 BoxCollider:
@@ -14780,7 +15542,7 @@ MonoBehaviour:
   isActiveTile: 1
   isBorder: 1
   matEnable: {fileID: 2100000, guid: 48970b1e8ecb29c4c8d5a1edf1ce103c, type: 2}
-  matDisable: {fileID: 2100000, guid: b984a4fb19d3702409a2610862119dbd, type: 2}
+  matDisable: {fileID: 2100000, guid: 39bcc9fc722c98441a7cd86bd9457151, type: 2}
   gameStateObject: {fileID: 0}
 --- !u!65 &2134920017
 BoxCollider:
