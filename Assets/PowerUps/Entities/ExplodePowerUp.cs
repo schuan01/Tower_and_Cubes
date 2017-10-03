@@ -1,24 +1,30 @@
-﻿using UnityEngine.UI;
+﻿
 using UnityEngine;
-
 public class ExplodePowerUp : BasePowerUp
 {
 
-    public float timeToWaitPower = 10.0f;
+
     public float timeLapsed;
 
     public bool isPowerEnable = false;
     void Start()
     {
-        timeLapsed = 10;
-        coinCost = 40;
 
-        if (coinCost > GetComponent<CoinsManager>().globalCoins)
+        if (usageCountLeft <= 0)
         {
 
             executeButton.interactable = false;
             isPowerEnable = false;
         }
+    }
+
+    void Awake()
+    {
+        timeLapsed = 10;
+        coinCost = 40;
+        timeToWaitPower = 10.0f;
+        powerName = "Explode_all_Enemies";
+        powerButtonName = "Explotar";
 
     }
 
@@ -27,7 +33,7 @@ public class ExplodePowerUp : BasePowerUp
     {
         timeLapsed += Time.deltaTime;
 
-        if (timeLapsed >= timeToWaitPower && coinCost <= GetComponent<CoinsManager>().globalCoins)
+        if (timeLapsed >= timeToWaitPower && usageCountLeft > 0)
         {
             isPowerEnable = true;
             executeButton.interactable = true;

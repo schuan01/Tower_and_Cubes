@@ -77,7 +77,6 @@ public class WaveGenerator : MonoBehaviour
 
     void ResetWave()
     {
-        Debug.Log("Termino oleada");
         waveStart = false;
         timeLapsedWaves = 0;
         currentEnemiesSpawn = 0;
@@ -97,7 +96,6 @@ public class WaveGenerator : MonoBehaviour
     private void StartWave()
     {
         waveStart = true;
-        Debug.Log("Empezo oleada");
         enemiesLeft = startEnemies;
         waveCount++;
         GetComponent<ScoreCounter>().ChangeWave(waveCount);
