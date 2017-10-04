@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TowerBase : MonoBehaviour
@@ -10,6 +8,8 @@ public class TowerBase : MonoBehaviour
     public GameObject player;
 
     public GameObject gameStateObject;
+
+    public GameObject nextPartToFall;
     void Start()
     {
         if (transform.gameObject.tag == "towerAll")
@@ -19,6 +19,10 @@ public class TowerBase : MonoBehaviour
                 TowerParts parts = child.GetComponent<TowerParts>();
                 if (parts != null)
                 {
+                    if(child.gameObject.name == "tower_bot")
+                    {
+                        nextPartToFall = child.gameObject;
+                    }
                     if (!child.GetComponent<TowerParts>().isIgnore)
                     {
                         gameStateObject.GetComponent<TowerManager>().AddPartToList(child.gameObject);

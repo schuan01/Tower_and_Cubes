@@ -58,12 +58,12 @@ public class EnemyBase : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
         {
             piso = hit.transform.gameObject;
-            if (piso != null && !piso.GetComponent<TerrainTile>().isActiveTile)
+            if (piso != null && piso.GetComponent<TerrainTile>() != null && !piso.GetComponent<TerrainTile>().isActiveTile)
             {
                 SetEnable(false);
                 
             }
-            else if (piso != null && piso.GetComponent<TerrainTile>().isActiveTile)
+            else if (piso != null && piso.GetComponent<TerrainTile>() != null &&  piso.GetComponent<TerrainTile>().isActiveTile)
             {
                 SetEnable(true);
                 

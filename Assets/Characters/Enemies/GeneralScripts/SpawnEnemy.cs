@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 //Spawn an enemy in a random Point each 2 seconds
 public class SpawnEnemy : MonoBehaviour
@@ -16,6 +15,8 @@ public class SpawnEnemy : MonoBehaviour
     public float multiplier = 0.3f;
 
     public float timeBetweenSpeedChange = 4;
+
+    public GameObject targetGameObject;
 
     public List<KeyValuePair<GameObject, float>> lstEnemies = new List<KeyValuePair<GameObject, float>>();
 
@@ -122,6 +123,8 @@ public class SpawnEnemy : MonoBehaviour
 
             GameObject go = Instantiate(ChooseRandomEnemy(), ground, Quaternion.identity);
             go.GetComponent<EnemyBase>().gameStateObject = gameObject;
+            Vector3 targetPosition = new Vector3(targetGameObject.transform.position.x, transform.position.y, targetGameObject.transform.position.z);
+            go.transform.LookAt(targetPosition);
 
             if (!piso.GetComponent<TerrainTile>().isActiveTile)
             {
