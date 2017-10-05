@@ -14,23 +14,40 @@ public class BasePowerUp : MonoBehaviour
     public string powerName;
 
     public string powerButtonName;
-    void Start()
-    {
 
+    public float timeLapsed;
+
+    public bool isPowerEnable = false;
+
+    internal virtual void Start()
+    {
+        if (usageCountLeft <= 0)
+        {
+
+            executeButton.interactable = false;
+            isPowerEnable = false;
+        }
     }
+
 
     // Update is called once per frame
-    void Update()
+    internal virtual void Update()
     {
+        timeLapsed += Time.deltaTime;
 
+        if (timeLapsed >= timeToWaitPower && usageCountLeft > 0)
+        {
+            isPowerEnable = true;
+            executeButton.interactable = true;
+        }
     }
 
-	public void DecreseUsageCountLeft()
-	{
-		usageCountLeft -= 1;
-        if(usageCountLeft < 0)
+    public void DecreseUsageCountLeft()
+    {
+        usageCountLeft -= 1;
+        if (usageCountLeft < 0)
         {
             usageCountLeft = 0;
         }
-	}
+    }
 }

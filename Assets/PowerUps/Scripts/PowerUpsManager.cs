@@ -4,6 +4,9 @@ public class PowerUpsManager : MonoBehaviour
 {
 
     public Button explodeButton;
+    public Button freezeButton;
+
+    public Material freezeMaterial;
 
 
 
@@ -12,7 +15,8 @@ public class PowerUpsManager : MonoBehaviour
 
 
         //Para el Explosion
-        GetPowersFromStart<ExplodePowerUp>();
+        GetPowersFromStart<ExplodePowerUp>(explodeButton);
+        GetPowersFromStart<FreezePowerUp>(freezeButton);
 
 
         //---Para los siguientes Power Ups, hace lo mismo de arriba
@@ -51,6 +55,29 @@ public class PowerUpsManager : MonoBehaviour
 
     }
 
+    public void FreezeEnemies()//Explota todo los enemigos de la vuelta
+    {
+
+        if (GetComponent<FreezePowerUp>().usageCountLeft > 0)
+        {
+            
+            gameObject.GetComponent<FreezePowerUp>().Execute();
+            gameObject.GetComponent<FreezePowerUp>().DecreseUsageCountLeft();
+            gameObject.GetComponent<FreezePowerUp>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<FreezePowerUp>().powerButtonName + "(" + GetComponent<FreezePowerUp>().usageCountLeft + ")";
+            gameObject.GetComponent<SaveGameManager>().savegameAll.AddValueToUsages(gameObject.GetComponent<FreezePowerUp>().powerName, gameObject.GetComponent<FreezePowerUp>().usageCountLeft);
+            GetComponent<SaveGameManager>().SaveGame();
+        }
+
+
+
+        /*if (GetComponent<ExplodePowerUp>().usageCountLeft <= GetComponent<CoinsManager>().globalCoins)
+        {
+            GetComponent<CoinsManager>().DecreseCoins(GetComponent<ExplodePowerUp>().coinCost);
+            gameObject.GetComponent<ExplodePowerUp>().Execute();
+        }*/
+
+    }
+
     public bool CalculateUsageLeft<ClassType>() where ClassType : BasePowerUp, new()
     {
         //Resta las monedas y agrega uno a la lista
@@ -72,11 +99,11 @@ public class PowerUpsManager : MonoBehaviour
     }
 
 
-    private void GetPowersFromStart<ClassType>() where ClassType : BasePowerUp, new()
+    private void GetPowersFromStart<ClassType>(Button executeBtn) where ClassType : BasePowerUp, new()
     {
 
         gameObject.AddComponent<ClassType>();
-        gameObject.GetComponent<ClassType>().executeButton = explodeButton;
+        gameObject.GetComponent<ClassType>().executeButton = executeBtn;
         gameObject.GetComponent<ClassType>().usageCountLeft = gameObject.GetComponent<SaveGameManager>()
                                                                     .savegameAll
                                                                     .GetUsageFromPowerName(gameObject.GetComponent<ClassType>().powerName, gameObject.GetComponent<ClassType>().usageCountLeft);

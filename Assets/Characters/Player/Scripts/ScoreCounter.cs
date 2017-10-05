@@ -3,7 +3,7 @@ using UnityEngine.UI;
 public class ScoreCounter : MonoBehaviour {
 
 	
-	int score;
+	public int score;
 	int currentWave;
 
 	public Text countText;

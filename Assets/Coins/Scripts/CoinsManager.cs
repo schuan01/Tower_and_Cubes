@@ -25,9 +25,9 @@ public class CoinsManager : MonoBehaviour
 
     }
 
-    public void IncreseCoins()
+    public void IncreseCoins(int coinIncrese)
     {
-        globalCoins += 1;
+        globalCoins += coinIncrese;
         GetComponent<SaveGameManager>().savegameAll.SetGlobalCoins(globalCoins);
         GetComponent<SaveGameManager>().SaveGame();
         GetComponent<ScoreCounter>().ChangeCoins();

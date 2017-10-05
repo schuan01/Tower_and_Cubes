@@ -7,7 +7,7 @@ public class EnemyBase : MonoBehaviour
 
 
     public int enemyLife = 1;
-    public float timeBeforeExplode = 3.0f;
+    
 
     private float timeBetweenCheck = 0.1f;
     
@@ -16,6 +16,10 @@ public class EnemyBase : MonoBehaviour
     public GameObject gameStateObject;
 
     public bool isEnemyActive = true;
+
+    public float maxSpeed = 0.0f;
+
+    public int coinReward = 1;
 
     
 
@@ -26,6 +30,8 @@ public class EnemyBase : MonoBehaviour
         gameStateObject.GetComponent<EnemiesManager>().AddEnemyToList(gameObject);
 
         InvokeRepeating("ChangeStateByTile", 0, timeBetweenCheck);//A partir del segundo 0, cada 0.1 segundos
+
+        GetComponent<NavMeshAgent>().speed = maxSpeed;
         
     }
 
@@ -84,7 +90,7 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void DestroyEnemy()
     {
-        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemy(gameObject);
+        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemy(gameObject,coinReward);
         Destroy(gameObject);
 
 

@@ -59,7 +59,8 @@ public class TowerParts : MonoBehaviour
                 }
             }
             GameObject nextPart = null;
-            if (transform.parent != null && transform.parent.GetComponent<TowerBase>().nextPartToFall.name == "tower_bot")
+           
+            if (transform.parent != null && transform.parent.GetComponent<TowerBase>().nextPartToFall != null && transform.parent.GetComponent<TowerBase>().nextPartToFall.name == "tower_bot")
             {
                 foreach (GameObject obj in gameStateObject.GetComponent<TowerManager>().lstTowerParts)
                 {
@@ -92,7 +93,7 @@ public class TowerParts : MonoBehaviour
                 return;
             }
 
-            if (transform.parent != null &&transform.parent.GetComponent<TowerBase>().nextPartToFall.name == "tower_mid")
+            if (transform.parent != null && transform.parent.GetComponent<TowerBase>().nextPartToFall != null && transform.parent.GetComponent<TowerBase>().nextPartToFall.name == "tower_mid")
             {
                 foreach (GameObject obj in gameStateObject.GetComponent<TowerManager>().lstTowerParts)
                 {

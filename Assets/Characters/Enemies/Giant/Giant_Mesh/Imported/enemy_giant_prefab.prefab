@@ -115,6 +115,7 @@ MonoBehaviour:
   timeBeforeExplode: 3
   gameStateObject: {fileID: 0}
   isEnemyActive: 1
+  maxSpeed: 0
 --- !u!114 &114791622441242370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +137,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.012525644
-  m_Speed: 1
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

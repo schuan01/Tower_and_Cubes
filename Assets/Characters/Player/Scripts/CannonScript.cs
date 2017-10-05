@@ -11,13 +11,18 @@ public class CannonScript : MonoBehaviour
 
     public float lifetime_bullet = 2.0f;
     public float secondsToWaitShoot = 1.0f;
+    public float waitToShootDecreser = 0.03f;
     private float timePassed = 0.0f;
+
+    public float bulletSpeed = 2500;
 
     private bool supportTouch = true;
 
     public GameObject bullet;
 
     public GameObject terrainAll;
+
+     
 
 
 
@@ -58,8 +63,7 @@ public class CannonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int layerMask = 1 << 3;
-        layerMask = ~layerMask;
+        
 
         timePassed += Time.deltaTime;
 
@@ -79,26 +83,7 @@ public class CannonScript : MonoBehaviour
 
                     if (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled)
                     {
-                        timePassed = 0.0f;
-
-                        Vector3 myTransform = transform.forward;
-
-                        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-                        RaycastHit Hit;
-                        //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
-                        if (Physics.Raycast(ray, out Hit, 1000, layerMask))
-                        //if (Physics.Raycast(transform.position, transform.forward, out Hit, Mathf.Infinity, layerMask))
-                        {
-
-                            GameObject piso = Hit.transform.gameObject;
-                            if (((piso != null) && (piso.tag.Contains("terrainQuad") && (piso.GetComponent<TerrainTile>().isActiveTile)) || (piso.tag.Contains("enemy") && piso.GetComponent<EnemyBase>().isEnemyActive)))
-                            {
-                                Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
-                                ShootToLocation(targetPosition, Hit.point);
-                            }
-
-
-                        }
+                        ShootToLocation(Input.GetTouch(0).position);
 
                     }
                 }
@@ -107,31 +92,7 @@ public class CannonScript : MonoBehaviour
             {
                 if (Input.GetMouseButton(0))
                 {
-
-                    timePassed = 0.0f;
-
-                    Vector3 myTransform = transform.forward;
-
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit Hit;
-                    //Vector3 direction = transform.TransformDirection(Vector3.forward);
-                    //if (Physics.Raycast(ray.origin, ray.direction, out Hit, Mathf.Infinity, layerMask))
-                    if (Physics.Raycast(ray, out Hit, 1000, layerMask))
-                    {
-                        //Debug.DrawRay(new Vector3(0,100,0),ray.direction,Color.red,10);
-                        GameObject piso = Hit.transform.gameObject;
-                        if (((piso != null) && (piso.tag.Contains("terrainQuad") && (piso.GetComponent<TerrainTile>().isActiveTile) || (piso.tag.Contains("enemy") && piso.GetComponent<EnemyBase>().isEnemyActive))))
-                        {
-                            
-                            Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
-                            ShootToLocation(targetPosition, Hit.point);
-
-                        }
-
-                    }
-
-
-
+                    ShootToLocation(Input.mousePosition);
                 }
             }
         }
@@ -143,17 +104,45 @@ public class CannonScript : MonoBehaviour
 
     }
 
-    private void ShootToLocation(Vector3 targetPosition, Vector3 hitPoint)
+    private void ShootToLocation(Vector3 inputPosition)
     {
-        transform.LookAt(targetPosition);
-        //transform.LookAt(Hit.point);
-        //transform.LookAt(ray.GetPoint(1000), Vector3.down);
-        //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
-        GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
-        newProjectile.transform.LookAt(hitPoint);
-        newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2500);
+        int layerMask = 1 << 3;
+        layerMask = ~layerMask;
+        timePassed = 0.0f;
 
-        Destroy(newProjectile, lifetime_bullet);
+        Vector3 myTransform = transform.forward;
+
+        Ray ray = Camera.main.ScreenPointToRay(inputPosition);
+        RaycastHit Hit;
+        //if(Physics.SphereCast(Input.GetTouch(0).position, 1.0f, direction, out Hit))
+        if (Physics.Raycast(ray, out Hit, 1000, layerMask))
+        //if (Physics.Raycast(transform.position, transform.forward, out Hit, Mathf.Infinity, layerMask))
+        {
+
+            GameObject piso = Hit.transform.gameObject;
+            if (((piso != null) && (piso.tag.Contains("terrainQuad") && (piso.GetComponent<TerrainTile>().isActiveTile)) || (piso.tag.Contains("enemy") && piso.GetComponent<EnemyBase>().isEnemyActive)))
+            {
+                Vector3 targetPosition = new Vector3(Hit.point.x, transform.position.y, Hit.point.z);
+                transform.LookAt(targetPosition);
+                //transform.LookAt(Hit.point);
+                //transform.LookAt(ray.GetPoint(1000), Vector3.down);
+                //transform.rotation = Quaternion.Euler(0, transform.rotation.y, transform.rotation.z);
+                GameObject newProjectile = Instantiate(bullet, transform.GetChild(0).position, Quaternion.identity) as GameObject;
+                newProjectile.transform.LookAt(Hit.point);
+                newProjectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * bulletSpeed);
+
+                Destroy(newProjectile, lifetime_bullet);
+            }
+
+
+        }
+
+
+    }
+
+    public void ChangeShootInterval()
+    {
+        secondsToWaitShoot -= waitToShootDecreser;
     }
 
     public void changeCameraPositionLeft()

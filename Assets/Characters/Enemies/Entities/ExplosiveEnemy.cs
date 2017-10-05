@@ -4,9 +4,15 @@ using UnityEngine;
 public class ExplosiveEnemy : EnemyBase
 {
     private bool isExploding = false;
+    public float timeBeforeExplode = 3.0f;
     internal override void Start()
     {
         base.enemyLife = 1;
+        base.maxSpeed = 1.3f;
+        if(gameObject.tag.Contains("enemy_explosive_static"))
+        {
+            base.maxSpeed = 0;
+        }
         base.Start();
     }
 

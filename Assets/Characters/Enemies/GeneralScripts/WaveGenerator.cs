@@ -7,9 +7,9 @@ public class WaveGenerator : MonoBehaviour
     public int waveCount;
     public int startEnemies = 4;//Empieza con 4 enemigos
 
-    public int enemiesAddedAfterWave = 2;//Enemigos que se agregan por oleada
+    public int enemiesAddedAfterWave = 3;//Enemigos que se agregan por oleada
 
-    public float timeBeforeNextWave = 5.0f;//3 segundos
+    public float timeBeforeNextWave = 3.0f;
 
     public bool waveStart = false;
 
@@ -17,13 +17,15 @@ public class WaveGenerator : MonoBehaviour
     public float timeLapsedSpawns = 0;
     public float timeLapsedWaves = 0;
 
-    public float timeBetweenSpawns = 2.0f;
+    public float timeBetweenSpawns = 1.8f;
 
-    public float spawnDecreser = 0.2f;
+    public float spawnDecreser = 0.05f;
 
     public int currentEnemiesSpawn;
 
     public int enemiesLeft;
+
+    public GameObject player;
 
     // Use this for initialization
     void Start()
@@ -82,6 +84,7 @@ public class WaveGenerator : MonoBehaviour
         startEnemies += enemiesAddedAfterWave;
         enemiesLeft = startEnemies;
         timeBetweenSpawns -= spawnDecreser;
+        player.GetComponent<CannonScript>().ChangeShootInterval();
 
 
     }

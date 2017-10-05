@@ -5,7 +5,9 @@ public class BuyPowerUpsUI : MonoBehaviour {
 	
 	public Canvas canvasBuyPowerUps;
 	public Button btnExplodeCoin;
+	public Button btnFreezeCoin;
 	public Text txtExplodeCount; 
+	public Text txtFreezeCount; 
 	void Start () {
 		
 		
@@ -24,6 +26,16 @@ public class BuyPowerUpsUI : MonoBehaviour {
 			txtExplodeCount.text = GetComponent<ExplodePowerUp>().usageCountLeft.ToString();
 			
 		}
+	} 
+
+	public void IncreseCountOfUsagesFreeze()
+	{
+		bool res = GetComponent<PowerUpsManager>().CalculateUsageLeft<FreezePowerUp>();
+		if(res)
+		{
+			txtFreezeCount.text = GetComponent<FreezePowerUp>().usageCountLeft.ToString();
+			
+		}
 	}
 
 	public void OpenCanvas()
@@ -32,6 +44,9 @@ public class BuyPowerUpsUI : MonoBehaviour {
 		Time.timeScale = 0;
 		btnExplodeCoin.GetComponentInChildren<Text>().text = GetComponent<ExplodePowerUp>().coinCost.ToString();
 		txtExplodeCount.text = GetComponent<ExplodePowerUp>().usageCountLeft.ToString();
+
+		btnFreezeCoin.GetComponentInChildren<Text>().text = GetComponent<FreezePowerUp>().coinCost.ToString();
+		txtFreezeCount.text = GetComponent<FreezePowerUp>().usageCountLeft.ToString();
 		
 	}
 

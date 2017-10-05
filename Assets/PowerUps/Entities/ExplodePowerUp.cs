@@ -3,42 +3,22 @@ using UnityEngine;
 public class ExplodePowerUp : BasePowerUp
 {
 
-
-    public float timeLapsed;
-
-    public bool isPowerEnable = false;
-    void Start()
+    internal override void Start()
     {
+        base.Start();
 
-        if (usageCountLeft <= 0)
-        {
-
-            executeButton.interactable = false;
-            isPowerEnable = false;
-        }
     }
 
     void Awake()
     {
         timeLapsed = 10;
-        coinCost = 40;
+        coinCost = 100;
         timeToWaitPower = 10.0f;
         powerName = "Explode_all_Enemies";
         powerButtonName = "Explotar";
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        timeLapsed += Time.deltaTime;
-
-        if (timeLapsed >= timeToWaitPower && usageCountLeft > 0)
-        {
-            isPowerEnable = true;
-            executeButton.interactable = true;
-        }
-    }
 
     public void Execute()
     {
@@ -49,7 +29,7 @@ public class ExplodePowerUp : BasePowerUp
             {
                 if (g != null)
                 {
-                    g.GetComponent<EnemyBase>().DestroyEnemyWithoutScore();
+                    g.GetComponent<EnemyBase>().DestroyEnemy();
                 }
             }
 
