@@ -16,6 +16,7 @@ public class EndGame : MonoBehaviour {
 
 	public void RestartGame()
 	{
+		GetComponent<PauseGame>().Pause();
 		SceneManager.LoadScene("main");
 	}
 

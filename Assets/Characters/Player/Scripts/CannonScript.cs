@@ -4,10 +4,9 @@ using UnityEngine;
 public class CannonScript : MonoBehaviour
 {
 
-    public List<GameObject> listCameras = new List<GameObject>();
-    public GameObject cameraPos_parent;
+    
 
-    private int currentCameraIndex = -1;
+    
 
     public float lifetime_bullet = 2.0f;
     public float secondsToWaitShoot = 1.0f;
@@ -20,7 +19,7 @@ public class CannonScript : MonoBehaviour
 
     public GameObject bullet;
 
-    public GameObject terrainAll;
+    
 
      
 
@@ -47,15 +46,7 @@ public class CannonScript : MonoBehaviour
             supportTouch = true;
         }
 
-        if (cameraPos_parent != null)
-        {
-            foreach (Transform child in cameraPos_parent.transform)
-            {
-                listCameras.Add(child.gameObject);
-            }
-
-            currentCameraIndex = listCameras.Count - 1;//arranca en ultimo indice
-        }
+       
     }
 
     //float distance = 10.0f;
@@ -145,53 +136,7 @@ public class CannonScript : MonoBehaviour
         secondsToWaitShoot -= waitToShootDecreser;
     }
 
-    public void changeCameraPositionLeft()
-    {
-        if (listCameras.Count > 0)
-        {
-            currentCameraIndex++;
-            if (currentCameraIndex > listCameras.Count - 1)
-            {
-                currentCameraIndex = 0;
-            }
-            GameObject nuevaPos = listCameras[currentCameraIndex];
-
-
-            Camera.main.transform.position = nuevaPos.transform.position;
-            Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(0, 90, 0, Space.World);
-
-            //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
-            terrainAll.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
-
-
-
-        }
-    }
-
-    public void changeCameraPositionRight()
-    {
-        if (listCameras.Count > 0)
-        {
-            currentCameraIndex--;
-            if (currentCameraIndex < 0)
-            {
-                currentCameraIndex = listCameras.Count - 1;//Ultimo indice
-            }
-
-            GameObject nuevaPos = listCameras[currentCameraIndex];
-
-            Camera.main.transform.position = nuevaPos.transform.position;
-            Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(0, -90, 0, Space.World);
-
-            //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
-            terrainAll.GetComponent<TerrainBase>().ChangeClickableTiles(nuevaPos);
-
-
-
-        }
-    }
+   
 
 
 }
