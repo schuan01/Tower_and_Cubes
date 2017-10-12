@@ -20,11 +20,16 @@ public class EndGame : MonoBehaviour {
 		SceneManager.LoadScene("main");
 	}
 
-	public void ShowEndGamePanel()
+	private void ShowEndGamePanel()
 	{
 		finalCanvas.enabled = true;
 
 		GetComponent<PauseGame>().Pause();
 		textFinal.text = GetComponent<ScoreCounter>().score.ToString();
+	}
+
+	public void EndTheGame()
+	{
+		ShowEndGamePanel();
 	}
 }

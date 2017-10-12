@@ -50,7 +50,7 @@ public class TowerBase : MonoBehaviour
         maxLife--;
         if (maxLife <= 0)
         {
-            gameStateObject.GetComponent<EndGame>().ShowEndGamePanel();
+            gameStateObject.GetComponent<EndGame>().EndTheGame();
              
         }
 
