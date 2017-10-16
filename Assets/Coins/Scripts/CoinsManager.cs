@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-
-[System.Serializable]
 public class CoinsManager : MonoBehaviour
 {
 

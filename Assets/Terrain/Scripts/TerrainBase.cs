@@ -11,8 +11,10 @@ public class TerrainBase : MonoBehaviour
 
     void Start()
     {
+
         SetTiles();
         ChangeClickableTiles(new GameObject("Bot"));
+
 
     }
 
@@ -176,7 +178,7 @@ public class TerrainBase : MonoBehaviour
 
 
                             g.GetComponent<TerrainTile>().SetEnable(true);
-                            
+
                         }
 
                     }
@@ -202,7 +204,7 @@ public class TerrainBase : MonoBehaviour
 
 
                             g.GetComponent<TerrainTile>().SetEnable(false);
-                            
+
                         }
 
 
@@ -216,7 +218,7 @@ public class TerrainBase : MonoBehaviour
 
 
                             g.GetComponent<TerrainTile>().SetEnable(true);
-                            
+
                         }
 
                     }
@@ -294,6 +296,17 @@ public class TerrainBase : MonoBehaviour
                     }
 
                 }
+            }
+        }
+    }
+
+    public void ResetAllTilesToActie()
+    {
+        foreach (GameObject g in listOfTiles)
+        {
+            if (g != null)
+            {
+                g.GetComponent<TerrainTile>().SetEnable(true);
             }
         }
     }

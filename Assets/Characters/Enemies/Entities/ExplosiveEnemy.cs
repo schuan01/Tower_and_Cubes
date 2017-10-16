@@ -5,8 +5,6 @@ public class ExplosiveEnemy : EnemyBase
 {
     private bool isExploding = false;
     public float timeBeforeExplode = 3.0f;
-
-    public AudioClip popSound;
     internal override void Start()
     {
         base.enemyLife = 1;
@@ -37,10 +35,10 @@ public class ExplosiveEnemy : EnemyBase
         {
             DestroyCurrentTile();
             gameStateObject.GetComponent<EnemiesManager>().DestroyEnemyWithoutScore(gameObject);
-            GetComponent<AudioSource>().clip = popSound;
+            /*GetComponent<AudioSource>().clip = popSound;
             GetComponent<AudioSource>().loop = false;
-            GetComponent<AudioSource>().Play();
-            Destroy(gameObject,0.060f);
+            GetComponent<AudioSource>().Play();*/
+            Destroy(gameObject);
         }
     }
 

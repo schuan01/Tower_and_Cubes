@@ -14,7 +14,7 @@ public class FreezePowerUp : BasePowerUp
     void Awake()
     {
         timeLapsed = 10;
-        coinCost = 40;
+        coinCost = 150;
         timeToWaitPower = 10.0f;
         powerName = "Freeze_all_Enemies";
         powerButtonName = "Congelar";

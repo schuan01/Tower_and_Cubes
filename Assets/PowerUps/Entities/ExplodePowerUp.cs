@@ -12,7 +12,7 @@ public class ExplodePowerUp : BasePowerUp
     void Awake()
     {
         timeLapsed = 10;
-        coinCost = 100;
+        coinCost = 300;
         timeToWaitPower = 10.0f;
         powerName = "Explode_all_Enemies";
         powerButtonName = "Explotar";
