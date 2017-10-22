@@ -8,6 +8,9 @@ public class PowerUpsManager : MonoBehaviour
 
     public Material freezeMaterial;
 
+    public ParticleSystem iceParticle;
+
+    public GameObject towerAll;
 
 
     void Start()
@@ -17,6 +20,8 @@ public class PowerUpsManager : MonoBehaviour
         //Para el Explosion
         GetPowersFromStart<ExplodePowerUp>(explodeButton);
         GetPowersFromStart<FreezePowerUp>(freezeButton);
+        GetComponent<FreezePowerUp>().iceParticlePrefab = iceParticle;
+        GetComponent<FreezePowerUp>().emitLocation = towerAll.transform.position;
 
 
         //---Para los siguientes Power Ups, hace lo mismo de arriba
@@ -60,7 +65,7 @@ public class PowerUpsManager : MonoBehaviour
 
         if (GetComponent<FreezePowerUp>().usageCountLeft > 0)
         {
-            
+
             gameObject.GetComponent<FreezePowerUp>().Execute();
             gameObject.GetComponent<FreezePowerUp>().DecreseUsageCountLeft();
             gameObject.GetComponent<FreezePowerUp>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<FreezePowerUp>().powerButtonName + "(" + GetComponent<FreezePowerUp>().usageCountLeft + ")";

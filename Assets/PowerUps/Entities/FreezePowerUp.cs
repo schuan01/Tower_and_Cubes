@@ -4,10 +4,20 @@ using UnityEngine.AI;
 public class FreezePowerUp : BasePowerUp
 {
 
+    public ParticleSystem iceParticlePrefab;
+    private ParticleSystem iceBlast;
+
+    public Vector3 emitLocation;
+
+
 
     internal override void Start()
     {
         base.Start();
+        iceBlast = Instantiate(iceParticlePrefab,emitLocation,Quaternion.identity);
+        iceBlast.gameObject.transform.Rotate(new Vector3(90,0,0));
+        iceBlast.Stop();
+
 
     }
 
@@ -18,17 +28,20 @@ public class FreezePowerUp : BasePowerUp
         timeToWaitPower = 10.0f;
         powerName = "Freeze_all_Enemies";
         powerButtonName = "Congelar";
+        
 
     }
 
     // Update is called once per frame
+    
 
 
     public void Execute()
     {
         if (isPowerEnable)
         {
-
+            
+            iceBlast.Play();
             foreach (GameObject g in gameObject.GetComponent<EnemiesManager>().lstEnemies)
             {
                 if (g != null)
