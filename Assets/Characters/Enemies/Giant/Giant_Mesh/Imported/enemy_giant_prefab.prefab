@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114791622441242370}
   - component: {fileID: 195499812792813382}
   - component: {fileID: 114122298508874418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemy_giant_prefab
   m_TagString: enemy_giant
   m_Icon: {fileID: 0}
@@ -112,10 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLife: 1
-  timeBeforeExplode: 3
   gameStateObject: {fileID: 0}
   isEnemyActive: 1
   maxSpeed: 0
+  coinReward: 1
+  freezeMaterial: {fileID: 2100000, guid: c0e3b0c3b2c623d448303e6a4a30030c, type: 2}
 --- !u!114 &114791622441242370
 MonoBehaviour:
   m_ObjectHideFlags: 1

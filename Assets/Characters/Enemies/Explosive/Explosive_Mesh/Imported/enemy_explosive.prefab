@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114992786034844512}
   - component: {fileID: 65852940756033064}
   - component: {fileID: 114998673817325112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemy_explosive
   m_TagString: enemy_explosive
   m_Icon: {fileID: 0}
@@ -128,8 +128,8 @@ MonoBehaviour:
   isEnemyActive: 1
   maxSpeed: 0
   coinReward: 1
+  freezeMaterial: {fileID: 2100000, guid: c0e3b0c3b2c623d448303e6a4a30030c, type: 2}
   timeBeforeExplode: 3
-  popSound: {fileID: 8300000, guid: 0ee6ebbd5cde7f248a3350fdb953f530, type: 3}
 --- !u!195 &195903988331477020
 NavMeshAgent:
   m_ObjectHideFlags: 1

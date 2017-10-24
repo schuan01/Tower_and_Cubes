@@ -32,7 +32,7 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -1447,6 +1447,17 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1030966230}
+    - target: {fileID: 114320801449286398, guid: 5d1030a6b93711e4595e570f20951673,
+        type: 2}
+      propertyPath: iceParticlePrefab
+      value: 
+      objectReference: {fileID: 198263926476626830, guid: 87e3d505b55db4f47b86f67a156234ae,
+        type: 2}
+    - target: {fileID: 114320801449286398, guid: 5d1030a6b93711e4595e570f20951673,
+        type: 2}
+      propertyPath: towerAll
+      value: 
+      objectReference: {fileID: 2090379241}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d1030a6b93711e4595e570f20951673, type: 2}
   m_IsPrefabParent: 0

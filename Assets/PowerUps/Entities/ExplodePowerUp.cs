@@ -6,6 +6,9 @@ public class ExplodePowerUp : BasePowerUp
     internal override void Start()
     {
         base.Start();
+        powerVFXInstance = Instantiate(powerVFXPrefab,powerVFXLocation,Quaternion.identity);
+        powerVFXInstance.gameObject.transform.Rotate(new Vector3(90,0,0));
+        powerVFXInstance.Stop();
 
     }
 
@@ -24,14 +27,18 @@ public class ExplodePowerUp : BasePowerUp
     {
         if (isPowerEnable)
         {
+            if(powerVFXPrefab != null && powerVFXInstance != null)
+            {
+                powerVFXInstance.Play();
+            }
 
-            foreach (GameObject g in gameObject.GetComponent<EnemiesManager>().lstEnemies)
+            /*foreach (GameObject g in gameObject.GetComponent<EnemiesManager>().lstEnemies)
             {
                 if (g != null)
                 {
                     g.GetComponent<EnemyBase>().DestroyEnemy();
                 }
-            }
+            }*/
 
             isPowerEnable = false;
             executeButton.interactable = false;

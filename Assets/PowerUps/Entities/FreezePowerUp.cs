@@ -3,20 +3,12 @@ using UnityEngine.AI;
 
 public class FreezePowerUp : BasePowerUp
 {
-
-    public ParticleSystem iceParticlePrefab;
-    private ParticleSystem iceBlast;
-
-    public Vector3 emitLocation;
-
-
-
     internal override void Start()
     {
         base.Start();
-        iceBlast = Instantiate(iceParticlePrefab,emitLocation,Quaternion.identity);
-        iceBlast.gameObject.transform.Rotate(new Vector3(90,0,0));
-        iceBlast.Stop();
+        powerVFXInstance = Instantiate(powerVFXPrefab,powerVFXLocation,Quaternion.identity);
+        powerVFXInstance.gameObject.transform.Rotate(new Vector3(90,0,0));
+        powerVFXInstance.Stop();
 
 
     }
@@ -40,9 +32,12 @@ public class FreezePowerUp : BasePowerUp
     {
         if (isPowerEnable)
         {
+            if(powerVFXPrefab != null && powerVFXInstance != null)
+            {
+                powerVFXInstance.Play();
+            }
             
-            iceBlast.Play();
-            foreach (GameObject g in gameObject.GetComponent<EnemiesManager>().lstEnemies)
+            /*foreach (GameObject g in gameObject.GetComponent<EnemiesManager>().lstEnemies)
             {
                 if (g != null)
                 {
@@ -61,7 +56,7 @@ public class FreezePowerUp : BasePowerUp
 
                     g.GetComponent<Renderer>().materials = mats;
                 }
-            }
+            }*/
 
             isPowerEnable = false;
             executeButton.interactable = false;

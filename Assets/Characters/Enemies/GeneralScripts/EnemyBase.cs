@@ -7,10 +7,10 @@ public class EnemyBase : MonoBehaviour
 
 
     public int enemyLife = 1;
-    
+
 
     private float timeBetweenCheck = 0.1f;
-    
+
     private GameObject piso = null;
 
     public GameObject gameStateObject;
@@ -21,18 +21,22 @@ public class EnemyBase : MonoBehaviour
 
     public int coinReward = 1;
 
-    
+    private bool isFreeze = false;
 
-    
+    public Material freezeMaterial;
+
+
+
+
     internal virtual void Start()
     {
-        
+
         gameStateObject.GetComponent<EnemiesManager>().AddEnemyToList(gameObject);
 
         InvokeRepeating("ChangeStateByTile", 0, timeBetweenCheck);//A partir del segundo 0, cada 0.1 segundos
 
         GetComponent<NavMeshAgent>().speed = maxSpeed;
-        
+
     }
 
     // Update is called once per frame
@@ -55,11 +59,11 @@ public class EnemyBase : MonoBehaviour
 
     public void SetBaseVelocity(float multiplier)
     {
-         GetComponent<NavMeshAgent>().speed = GetComponent<NavMeshAgent>().speed + multiplier;
+        GetComponent<NavMeshAgent>().speed = GetComponent<NavMeshAgent>().speed + multiplier;
     }
     public virtual void ChangeStateByTile()
     {
-       
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
         {
@@ -67,12 +71,12 @@ public class EnemyBase : MonoBehaviour
             if (piso != null && piso.GetComponent<TerrainTile>() != null && !piso.GetComponent<TerrainTile>().isActiveTile)
             {
                 SetEnable(false);
-                
+
             }
-            else if (piso != null && piso.GetComponent<TerrainTile>() != null &&  piso.GetComponent<TerrainTile>().isActiveTile)
+            else if (piso != null && piso.GetComponent<TerrainTile>() != null && piso.GetComponent<TerrainTile>().isActiveTile)
             {
                 SetEnable(true);
-                
+
             }
         }
     }
@@ -90,7 +94,7 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void DestroyEnemy()
     {
-        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemy(gameObject,coinReward);
+        gameStateObject.GetComponent<EnemiesManager>().DestroyEnemy(gameObject, coinReward);
         Destroy(gameObject);
 
 
@@ -103,7 +107,30 @@ public class EnemyBase : MonoBehaviour
 
 
     }
-    
+
+    public void FreezeEnemy()
+    {
+        if (!isFreeze)
+        {
+            isFreeze = true;
+            GetComponent<NavMeshAgent>().speed -= GetComponent<NavMeshAgent>().speed * 0.7f;
+
+            Material[] mats = GetComponent<Renderer>().materials;
+            for (int i = 0; i < mats.Length; i++)
+            {
+
+                if (mats[i].name.Contains("Marron") || mats[i].name.Contains("Negro") || mats[i].name.Contains("Gris"))
+                {
+
+                    mats[i] = freezeMaterial;
+
+                }
+            }
+
+            GetComponent<Renderer>().materials = mats;
+        }
+    }
+
 
 
 

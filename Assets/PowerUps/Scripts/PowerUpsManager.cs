@@ -8,7 +8,9 @@ public class PowerUpsManager : MonoBehaviour
 
     public Material freezeMaterial;
 
-    public ParticleSystem iceParticle;
+    public ParticleSystem iceParticlePrefab;
+
+    public ParticleSystem fireParticlePrefab;
 
     public GameObject towerAll;
 
@@ -16,24 +18,8 @@ public class PowerUpsManager : MonoBehaviour
     void Start()
     {
 
-
-        //Para el Explosion
-        GetPowersFromStart<ExplodePowerUp>(explodeButton);
-        GetPowersFromStart<FreezePowerUp>(freezeButton);
-        GetComponent<FreezePowerUp>().iceParticlePrefab = iceParticle;
-        GetComponent<FreezePowerUp>().emitLocation = towerAll.transform.position;
-
-
-        //---Para los siguientes Power Ups, hace lo mismo de arriba
-
-        //---
-
-
-
-
-
-
-
+        GetPowersFromStart<ExplodePowerUp>(explodeButton,fireParticlePrefab,towerAll.transform.position);
+        GetPowersFromStart<FreezePowerUp>(freezeButton,iceParticlePrefab,towerAll.transform.position);
 
     }
 
@@ -104,7 +90,7 @@ public class PowerUpsManager : MonoBehaviour
     }
 
 
-    private void GetPowersFromStart<ClassType>(Button executeBtn) where ClassType : BasePowerUp, new()
+    private void GetPowersFromStart<ClassType>(Button executeBtn,ParticleSystem vfxParticle,Vector3 vfxParticleLocation) where ClassType : BasePowerUp, new()
     {
 
         gameObject.AddComponent<ClassType>();
@@ -114,6 +100,13 @@ public class PowerUpsManager : MonoBehaviour
                                                                     .GetUsageFromPowerName(gameObject.GetComponent<ClassType>().powerName, gameObject.GetComponent<ClassType>().usageCountLeft);
 
         gameObject.GetComponent<ClassType>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<ClassType>().powerButtonName + "(" + GetComponent<ClassType>().usageCountLeft + ")";
+
+        //-------- VFX ----------------
+         gameObject.GetComponent<ClassType>().powerVFXPrefab = vfxParticle;
+         gameObject.GetComponent<ClassType>().powerVFXLocation = vfxParticleLocation;
+        //------- END VFX -------------
+
+        
         gameObject.GetComponent<SaveGameManager>().savegameAll.AddValueToUsages(gameObject.GetComponent<ClassType>().powerName, gameObject.GetComponent<ClassType>().usageCountLeft);
     }
 

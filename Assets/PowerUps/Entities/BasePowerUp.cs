@@ -19,6 +19,12 @@ public class BasePowerUp : MonoBehaviour
 
     public bool isPowerEnable = false;
 
+    public ParticleSystem powerVFXPrefab;
+
+    public ParticleSystem powerVFXInstance;   
+
+    public Vector3 powerVFXLocation; 
+
     internal virtual void Start()
     {
         if (usageCountLeft <= 0)

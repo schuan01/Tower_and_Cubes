@@ -9,11 +9,11 @@ public class ExplosiveEnemy : EnemyBase
     {
         base.enemyLife = 1;
         base.maxSpeed = 1.3f;
-        if(gameObject.tag.Contains("enemy_explosive_static"))
+        if (gameObject.tag.Contains("enemy_explosive_static"))
         {
             base.maxSpeed = 0;
         }
-        base.Start(); 
+        base.Start();
     }
 
     void Update()
@@ -46,15 +46,26 @@ public class ExplosiveEnemy : EnemyBase
 
     void DestroyCurrentTile()
     {
+        
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, 10))
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1000))
         {
             GameObject go = hit.transform.gameObject;
             if (go != null && go.tag.Contains("terrainQuad"))
             {
+                
                 go.transform.parent.gameObject.GetComponent<TerrainBase>().CheckBorders(go);
+               
+
                 go.transform.parent.gameObject.GetComponent<TerrainBase>().DestroyTile(go);
+
             }
+
+        }
+        else
+        {
+            
+            Debug.Log("Cayo en ELSE");
         }
 
     }

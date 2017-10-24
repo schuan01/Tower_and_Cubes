@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4690540316823806}
   - component: {fileID: 198263926476626830}
   - component: {fileID: 199560326860205232}
-  - component: {fileID: 114886361143618656}
+  - component: {fileID: 114671889885251362}
   m_Layer: 0
-  m_Name: fx_ice_blast
+  m_Name: fx_fire_blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114886361143618656
+--- !u!114 &114671889885251362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1796293667833184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1b1f1e78545ab249a31b451b61c4825, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ca9a83a90e860f4c93909aab78d4957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &198263926476626830
@@ -205,8 +205,8 @@ ParticleSystem:
       maxColor: {r: 0.06812286, g: 0.74293035, b: 0.77205884, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.039251715, g: 0.7841323, b: 0.8897059, a: 1}
-        key1: {r: 0.89705884, g: 0.89705884, b: 0.89705884, a: 1}
+        key0: {r: 0.9852941, g: 0.10192697, b: 0, a: 1}
+        key1: {r: 0.96484905, g: 0.97794116, b: 0.028763002, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

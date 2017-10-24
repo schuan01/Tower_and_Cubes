@@ -43,15 +43,9 @@ public class TerrainBase : MonoBehaviour
         }
     }
 
-
-
-    public GameObject[,] GetArrayTerrain()
-    {
-        return listOfTiles;
-    }
-
     public void DestroyTile(GameObject tile)
     {
+
         GameObject g = Instantiate(new GameObject(), tile.transform.position, Quaternion.identity);
         g.AddComponent<NavMeshObstacle>();
         g.GetComponent<NavMeshObstacle>().carving = true;
@@ -60,6 +54,8 @@ public class TerrainBase : MonoBehaviour
         int[] pos = GetTileIndexByName(tile);
         listOfTiles[pos[0], pos[1]] = null;//Eliminamos del array
         Destroy(tile);//Eliminamos de la escena
+
+
     }
 
     private int[] GetTileIndexByName(GameObject tile)
@@ -77,7 +73,6 @@ public class TerrainBase : MonoBehaviour
     public void CheckBorders(GameObject sourceTile)
     {
         int[] positions = GetTileIndexByName(sourceTile);
-        DestroyTile(sourceTile);
         int posI = positions[0];
         int posJ = positions[1];
         int largoI;

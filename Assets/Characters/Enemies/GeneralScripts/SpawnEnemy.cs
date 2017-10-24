@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-//Spawn an enemy in a random Point each 2 seconds
+
 public class SpawnEnemy : MonoBehaviour
 {
 
@@ -25,23 +25,23 @@ public class SpawnEnemy : MonoBehaviour
         int cont = 0;
         foreach (GameObject g in respawnPrefab)
         {
-            if (g.tag.Contains("enemy_normal"))
+            if (g.tag.Equals("enemy_normal"))
             {
-                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 50));
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 40));
             }
 
-            if (g.tag.Contains("enemy_explosive"))
+            if (g.tag.Equals("enemy_explosive"))
+            {
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 25));
+            }
+
+            if (g.tag.Equals("enemy_explosive_static"))
             {
                 lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 20));
-            }
-
-            if (g.tag.Contains("enemy_explosive_static"))
-            {
-                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 15));
 
             }
 
-            if (g.tag.Contains("enemy_giant"))
+            if (g.tag.Equals("enemy_giant"))
             {
                 lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 15));
             }
