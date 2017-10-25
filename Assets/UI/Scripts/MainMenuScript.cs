@@ -26,4 +26,10 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("desert_scene");
 
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+
+    }
 }

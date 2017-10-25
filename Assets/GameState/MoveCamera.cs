@@ -63,12 +63,7 @@ public class MoveCamera : MonoBehaviour
                        cameraTransitionTime));
 
 
-            /*Camera.main.transform.position = nuevaPos.transform.position;
-            Quaternion rot = Camera.main.transform.rotation;
-            Camera.main.transform.Rotate(0, 90, 0, Space.World);*/
-
-            //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
-
+      
 
 
 
@@ -94,11 +89,7 @@ public class MoveCamera : MonoBehaviour
                         nuevaPos.transform.rotation,
                         cameraTransitionTime));
 
-            /* Camera.main.transform.position = nuevaPos.transform.position;
-             Quaternion rot = Camera.main.transform.rotation;
-             Camera.main.transform.Rotate(0, -90, 0, Space.World);*/
-
-            //Camera.main.transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
+       
 
 
 
