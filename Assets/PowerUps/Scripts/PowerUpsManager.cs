@@ -6,8 +6,6 @@ public class PowerUpsManager : MonoBehaviour
     public Button explodeButton;
     public Button freezeButton;
 
-    public Material freezeMaterial;
-
     public ParticleSystem iceParticlePrefab;
 
     public ParticleSystem fireParticlePrefab;
@@ -37,13 +35,6 @@ public class PowerUpsManager : MonoBehaviour
         }
 
 
-
-        /*if (GetComponent<ExplodePowerUp>().usageCountLeft <= GetComponent<CoinsManager>().globalCoins)
-        {
-            GetComponent<CoinsManager>().DecreseCoins(GetComponent<ExplodePowerUp>().coinCost);
-            gameObject.GetComponent<ExplodePowerUp>().Execute();
-        }*/
-
     }
 
     public void FreezeEnemies()//Explota todo los enemigos de la vuelta
@@ -58,14 +49,6 @@ public class PowerUpsManager : MonoBehaviour
             gameObject.GetComponent<SaveGameManager>().savegameAll.AddValueToUsages(gameObject.GetComponent<FreezePowerUp>().powerName, gameObject.GetComponent<FreezePowerUp>().usageCountLeft);
             GetComponent<SaveGameManager>().SaveGame();
         }
-
-
-
-        /*if (GetComponent<ExplodePowerUp>().usageCountLeft <= GetComponent<CoinsManager>().globalCoins)
-        {
-            GetComponent<CoinsManager>().DecreseCoins(GetComponent<ExplodePowerUp>().coinCost);
-            gameObject.GetComponent<ExplodePowerUp>().Execute();
-        }*/
 
     }
 

@@ -20,10 +20,12 @@ public class CannonScript : MonoBehaviour
 
     private int fingerID = -1;
 
+    public bool allowToRotateCamera = true;
+
     void Awake()
     {
 #if !UNITY_EDITOR
-                fingerID = 0; 
+            fingerID = 0; 
 #endif
     }
     void Start()
@@ -48,8 +50,6 @@ public class CannonScript : MonoBehaviour
 
     }
 
-    //float distance = 10.0f;
-
     // Update is called once per frame
     void Update()
     {
@@ -71,10 +71,9 @@ public class CannonScript : MonoBehaviour
 
                 if (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled)
                 {
-                    //if (timePassed >= secondsToWaitShoot)
-                    //{
+
                     ShootToLocation(Input.GetTouch(0).position);
-                    //}
+
 
                 }
             }
@@ -83,10 +82,9 @@ public class CannonScript : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                //if (timePassed >= secondsToWaitShoot)
-                //{
+
                 ShootToLocation(Input.mousePosition);
-                //}
+
             }
         }
     }
@@ -121,14 +119,17 @@ public class CannonScript : MonoBehaviour
         }
         else
         {
-            if (inputPosition.x < Screen.width / 2)
+            if (allowToRotateCamera)
             {
-                gameStateObject.GetComponent<MoveCamera>().changeCameraPositionLeft();
-            }
+                if (inputPosition.x < Screen.width / 2)
+                {
+                    gameStateObject.GetComponent<MoveCamera>().changeCameraPositionLeft();
+                }
 
-            if (inputPosition.x > Screen.width / 2)
-            {
-                gameStateObject.GetComponent<MoveCamera>().changeCameraPositionRight();
+                if (inputPosition.x > Screen.width / 2)
+                {
+                    gameStateObject.GetComponent<MoveCamera>().changeCameraPositionRight();
+                }
             }
         }
 

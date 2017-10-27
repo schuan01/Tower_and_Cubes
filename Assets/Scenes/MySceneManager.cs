@@ -36,15 +36,14 @@ public class MySceneManager : MonoBehaviour
             ChangeEnemiesProbability();
             ChangeWaveBehavior();
             ChangePlayerShootSpeed();
+            ChangePlayerCameraRotation();
+            ChangeEnemyCoinCost();
         }
     }
 
     void Update()
     {
-        if (!isMainScene)
-        {
-			//terrainAll.gameObject.transform.Rotate (0,10*Time.deltaTime,0); //rotates 50 degrees per second around z axis
-        }
+        
     }
 
     public void ChangeUI()
@@ -88,6 +87,17 @@ public class MySceneManager : MonoBehaviour
     {
         player.GetComponent<CannonScript>().secondsToWaitShoot = 0.25f;
         player.GetComponent<CannonScript>().waitToShootDecreser = 0.0f;
+
+    }
+    public void ChangePlayerCameraRotation()
+    {
+        player.GetComponent<CannonScript>().allowToRotateCamera = false;
+
+    }
+
+    public void ChangeEnemyCoinCost()
+    {
+        GetComponent<CoinsManager>().difRewardCost = true;
 
     }
 

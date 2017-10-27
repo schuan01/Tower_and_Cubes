@@ -349,6 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70533126}
   - component: {fileID: 70533125}
+  - component: {fileID: 70533127}
   m_Layer: 0
   m_Name: TerrainAll
   m_TagString: terrainAll
@@ -502,6 +503,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &70533127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 70533124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23, y: 1, z: 23}
+  m_Center: {x: 0, y: -1.5, z: 0}
 --- !u!1 &87923715
 GameObject:
   m_ObjectHideFlags: 0
@@ -7867,6 +7880,7 @@ MonoBehaviour:
   bulletSpeed: 2500
   bullet: {fileID: 1471621142008018, guid: 0d01ec9240ff1064a9501170c9aa6af0, type: 2}
   gameStateObject: {fileID: 1636041551}
+  allowToRotateCamera: 1
 --- !u!23 &1030966232
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12247,7 +12261,6 @@ GameObject:
   - component: {fileID: 1597815127}
   - component: {fileID: 1597815126}
   - component: {fileID: 1597815125}
-  - component: {fileID: 1597815130}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12326,20 +12339,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45.000004, y: -90.00001, z: 0}
---- !u!114 &1597815130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1597815124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -768656878, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EventMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &1601389339
 GameObject:
   m_ObjectHideFlags: 0

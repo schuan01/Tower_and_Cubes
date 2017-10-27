@@ -18,6 +18,12 @@ public class SpawnEnemy : MonoBehaviour
 
     public GameObject targetGameObject;
 
+    public int normalEnemyProbability = 40;
+    public int explosiveEnemyProbability = 25;
+    public int explosiveStaticEnemyProbability = 20;
+
+    public int giantEnemyProbability = 15;
+
     public List<KeyValuePair<GameObject, float>> lstEnemies = new List<KeyValuePair<GameObject, float>>();
 
     void Start()
@@ -27,23 +33,23 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (g.tag.Equals("enemy_normal"))
             {
-                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 40));
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, normalEnemyProbability));
             }
 
             if (g.tag.Equals("enemy_explosive"))
             {
-                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 25));
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, explosiveEnemyProbability));
             }
 
             if (g.tag.Equals("enemy_explosive_static"))
             {
-                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 20));
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, explosiveStaticEnemyProbability));
 
             }
 
             if (g.tag.Equals("enemy_giant"))
             {
-                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, 15));
+                lstEnemies.Add(new KeyValuePair<GameObject, float>(g, giantEnemyProbability));
             }
             cont++;
         }

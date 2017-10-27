@@ -862,6 +862,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114683027727353812, guid: 47b86c80d63b49b4a8d5132ff852d17f,
+        type: 2}
+      propertyPath: gameStateObject
+      value: 
+      objectReference: {fileID: 436562847}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47b86c80d63b49b4a8d5132ff852d17f, type: 2}
   m_IsPrefabParent: 0
@@ -1458,6 +1463,12 @@ Prefab:
       propertyPath: towerAll
       value: 
       objectReference: {fileID: 2090379241}
+    - target: {fileID: 114320801449286398, guid: 5d1030a6b93711e4595e570f20951673,
+        type: 2}
+      propertyPath: fireParticlePrefab
+      value: 
+      objectReference: {fileID: 198263926476626830, guid: 954632b237a8e44408bbe8008a35d20f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d1030a6b93711e4595e570f20951673, type: 2}
   m_IsPrefabParent: 0

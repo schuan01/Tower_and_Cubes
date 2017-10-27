@@ -35,11 +35,7 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (!isMoving)
-        { // never start a new MoveObject while it's already running!
-
-            StartCoroutine(MoveObject(Camera.main.transform, Camera.main.transform.position, listCameras[0].transform.position, Camera.main.transform.rotation, listCameras[0].transform.rotation, 0.5f));
-        }*/
+        
     }
 
     public void changeCameraPositionLeft()

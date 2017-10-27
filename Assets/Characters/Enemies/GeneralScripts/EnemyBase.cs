@@ -25,6 +25,8 @@ public class EnemyBase : MonoBehaviour
 
     public Material freezeMaterial;
 
+    public float freezeMovementReduction = 0.7f;
+
 
 
 
@@ -113,7 +115,7 @@ public class EnemyBase : MonoBehaviour
         if (!isFreeze)
         {
             isFreeze = true;
-            GetComponent<NavMeshAgent>().speed -= GetComponent<NavMeshAgent>().speed * 0.7f;
+            GetComponent<NavMeshAgent>().speed -= GetComponent<NavMeshAgent>().speed * freezeMovementReduction;
 
             Material[] mats = GetComponent<Renderer>().materials;
             for (int i = 0; i < mats.Length; i++)
