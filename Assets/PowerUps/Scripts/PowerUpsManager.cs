@@ -8,7 +8,7 @@ public class PowerUpsManager : MonoBehaviour
 
     public ParticleSystem iceParticlePrefab;
 
-    public ParticleSystem fireParticlePrefab;
+    public ParticleSystem fireParticlePrefab; 
 
     public GameObject towerAll;
 
@@ -29,7 +29,7 @@ public class PowerUpsManager : MonoBehaviour
         {
             gameObject.GetComponent<ExplodePowerUp>().Execute();
             gameObject.GetComponent<ExplodePowerUp>().DecreseUsageCountLeft();
-            gameObject.GetComponent<ExplodePowerUp>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<ExplodePowerUp>().powerButtonName + "(" + GetComponent<ExplodePowerUp>().usageCountLeft + ")";
+            gameObject.GetComponent<ExplodePowerUp>().executeButton.GetComponentInChildren<Text>().text = "x" + GetComponent<ExplodePowerUp>().usageCountLeft.ToString();
             gameObject.GetComponent<SaveGameManager>().savegameAll.AddValueToUsages(gameObject.GetComponent<ExplodePowerUp>().powerName, gameObject.GetComponent<ExplodePowerUp>().usageCountLeft);
             GetComponent<SaveGameManager>().SaveGame();
         }
@@ -45,7 +45,7 @@ public class PowerUpsManager : MonoBehaviour
 
             gameObject.GetComponent<FreezePowerUp>().Execute();
             gameObject.GetComponent<FreezePowerUp>().DecreseUsageCountLeft();
-            gameObject.GetComponent<FreezePowerUp>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<FreezePowerUp>().powerButtonName + "(" + GetComponent<FreezePowerUp>().usageCountLeft + ")";
+            gameObject.GetComponent<FreezePowerUp>().executeButton.GetComponentInChildren<Text>().text =  "x" + GetComponent<FreezePowerUp>().usageCountLeft.ToString();
             gameObject.GetComponent<SaveGameManager>().savegameAll.AddValueToUsages(gameObject.GetComponent<FreezePowerUp>().powerName, gameObject.GetComponent<FreezePowerUp>().usageCountLeft);
             GetComponent<SaveGameManager>().SaveGame();
         }
@@ -82,7 +82,7 @@ public class PowerUpsManager : MonoBehaviour
                                                                     .savegameAll
                                                                     .GetUsageFromPowerName(gameObject.GetComponent<ClassType>().powerName, gameObject.GetComponent<ClassType>().usageCountLeft);
 
-        gameObject.GetComponent<ClassType>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<ClassType>().powerButtonName + "(" + GetComponent<ClassType>().usageCountLeft + ")";
+        gameObject.GetComponent<ClassType>().executeButton.GetComponentInChildren<Text>().text = "x" + GetComponent<ClassType>().usageCountLeft.ToString();
 
         //-------- VFX ----------------
          gameObject.GetComponent<ClassType>().powerVFXPrefab = vfxParticle;
@@ -95,7 +95,7 @@ public class PowerUpsManager : MonoBehaviour
 
     public void ChangeUsageCount<ClassType>() where ClassType : BasePowerUp, new()
     {
-        gameObject.GetComponent<ClassType>().executeButton.GetComponentInChildren<Text>().text = gameObject.GetComponent<ClassType>().powerButtonName + "(" + GetComponent<ClassType>().usageCountLeft + ")";
+        gameObject.GetComponent<ClassType>().executeButton.GetComponentInChildren<Text>().text =  "x" + GetComponent<ClassType>().usageCountLeft.ToString();
 
     }
 

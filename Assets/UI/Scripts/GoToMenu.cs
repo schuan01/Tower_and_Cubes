@@ -15,6 +15,8 @@ public class GoToMenu : MonoBehaviour {
 
 	public void OpenMenu()
 	{
+		GetComponent<PauseGame>().Pause();
 		SceneManager.LoadScene("mainMenu_scene");
 	}
+	
 }

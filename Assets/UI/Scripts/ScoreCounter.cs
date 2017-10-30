@@ -14,26 +14,26 @@ public class ScoreCounter : MonoBehaviour {
 	void Start () {
 		score = 0;
 		currentWave = 1;
-		countText.text = "Puntaje: "+ score.ToString();
-		waveText.text = "Oleada: "+ currentWave.ToString();
-		coinText.text = "Monedas: "+ GetComponent<CoinsManager>().globalCoins;
+		countText.text = score.ToString();
+		waveText.text = "Horda: "+ currentWave.ToString();
+		coinText.text = GetComponent<CoinsManager>().globalCoins.ToString();
 		
 	}
 	
 	public void ChangeScore()
 	{
 		score++;
-		countText.text = "Puntaje: "+ score.ToString();
+		countText.text = score.ToString();
 	}
 
 	public void ChangeWave(int wave)
 	{
 		currentWave = wave;
-		waveText.text = "Oleada: "+ currentWave.ToString();
+		waveText.text = "Horda: "+ currentWave.ToString();
 	}
 
 	public void ChangeCoins()
 	{
-		coinText.text = "Monedas: "+ GetComponent<CoinsManager>().globalCoins;
+		coinText.text = GetComponent<CoinsManager>().globalCoins.ToString();
 	}
 }
