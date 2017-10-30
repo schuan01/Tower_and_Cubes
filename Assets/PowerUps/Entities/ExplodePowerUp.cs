@@ -15,7 +15,7 @@ public class ExplodePowerUp : BasePowerUp
     void Awake()
     {
         timeLapsed = 10;
-        coinCost = 1;
+        coinCost = 100;
         timeToWaitPower = 10.0f;
         powerName = "Explode_all_Enemies";
         powerButtonName = "Explotar";

@@ -18,15 +18,15 @@ public class CannonScript : MonoBehaviour
 
     public GameObject gameStateObject;
 
-    private int fingerID = -1;
+    //private int fingerID = -1;
 
     public bool allowToRotateCamera = true;
 
     void Awake()
     {
-#if !UNITY_EDITOR
+/*#if !UNITY_EDITOR
             fingerID = 0; 
-#endif
+#endif*/
     }
     void Start()
     {
@@ -54,7 +54,8 @@ public class CannonScript : MonoBehaviour
     void Update()
     {
 
-        if (EventSystem.current.IsPointerOverGameObject(fingerID))
+        //if (EventSystem.current.IsPointerOverGameObject(fingerID))
+        if(IsPointerOverUIObject())
         {
 
             return;
@@ -139,6 +140,15 @@ public class CannonScript : MonoBehaviour
     public void ChangeShootInterval()
     {
         secondsToWaitShoot -= waitToShootDecreser;
+    }
+
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 
 
