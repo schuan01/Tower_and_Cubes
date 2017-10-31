@@ -13,6 +13,8 @@ public class MySceneManager : MonoBehaviour
     public Button left;
     public Button right;
 
+    public Text txtCoins;
+
     public Text txtWave;
 
     public GameObject terrainAll;
@@ -55,6 +57,7 @@ public class MySceneManager : MonoBehaviour
         left.gameObject.SetActive(false);
         right.gameObject.SetActive(false);
         txtWave.gameObject.SetActive(false);
+        //txtCoins.gameObject.SetActive(false);
 
     }
 

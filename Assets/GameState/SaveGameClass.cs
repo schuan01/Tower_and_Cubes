@@ -8,6 +8,10 @@ public class SaveGameClass
     int globalCoins = -1;
     public List<KeyValuePair<string, int>> lstPowerUpsUsages = null;
 
+    public int highScoreClassic;
+
+    public int highScoreCross;
+
 
     public int GetGlobalCoins()
     {
@@ -17,6 +21,16 @@ public class SaveGameClass
     public List<KeyValuePair<string, int>> GetPowerUps()
     {
         return lstPowerUpsUsages;
+    }
+
+    public int GetHighScoreClassic()
+    {
+        return highScoreClassic;
+    }
+
+    public int GetHighScoreCross()
+    {
+        return highScoreCross;
     }
 
     public void SetGlobalCoins(int coins)
@@ -29,11 +43,23 @@ public class SaveGameClass
         lstPowerUpsUsages = lst;
     }
 
+    public void SetHighScoreClassic(int value)
+    {
+        highScoreClassic = value;
+    }
+
+    public void SetHighScoreCross(int value)
+    {
+        highScoreCross = value;
+    }
+
 
     public SaveGameClass()//Constructor
     {
         globalCoins = -1;
         lstPowerUpsUsages = new List<KeyValuePair<string, int>>();
+        highScoreClassic = 0;
+        highScoreCross = 0;
     }
 
     public void AddValueToUsages(string powerName, int usages)
