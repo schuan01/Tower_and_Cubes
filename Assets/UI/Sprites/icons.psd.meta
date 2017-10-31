@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 73ebc6038f85f8f4494d15f64c46f9ad
-timeCreated: 1509330558
+timeCreated: 1509421556
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,7 @@ TextureImporter:
     21300010: btnBuyPoweruP
     21300012: goMainMenuSprite
     21300014: restartGameSprite
+    21300016: buttonBackgroundSprite
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -102,10 +103,10 @@ TextureImporter:
       name: settingsSprite
       rect:
         serializedVersion: 2
-        x: 0
-        y: 559
-        width: 322
-        height: 239
+        x: 57
+        y: 778
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,9 +117,9 @@ TextureImporter:
       name: iceBlastSprite
       rect:
         serializedVersion: 2
-        x: 662
-        y: 548
-        width: 261
+        x: 661
+        y: 757
+        width: 262
         height: 262
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -130,9 +131,9 @@ TextureImporter:
       name: fireBlastSprite
       rect:
         serializedVersion: 2
-        x: 357
-        y: 548
-        width: 260
+        x: 355
+        y: 757
+        width: 262
         height: 262
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -144,10 +145,10 @@ TextureImporter:
       name: shoppingCartSprite
       rect:
         serializedVersion: 2
-        x: 0
-        y: 263
-        width: 322
-        height: 239
+        x: 4
+        y: 471
+        width: 319
+        height: 254
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +159,10 @@ TextureImporter:
       name: coinSprite
       rect:
         serializedVersion: 2
-        x: 377
-        y: 271
-        width: 227
-        height: 230
+        x: 369
+        y: 475
+        width: 235
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,9 +174,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 661
-        y: 326
+        y: 534
         width: 432
-        height: 172
+        height: 173
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,12 +187,12 @@ TextureImporter:
       name: goMainMenuSprite
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1
+        y: 199
         width: 322
-        height: 241
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,10 +201,24 @@ TextureImporter:
       name: restartGameSprite
       rect:
         serializedVersion: 2
-        x: 343
-        y: 0
+        x: 354
+        y: 199
         width: 323
-        height: 241
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buttonBackgroundSprite
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 433
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
